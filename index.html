@@ -1113,16 +1113,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>Chicago</td><td>1,779</td><td class="percentage">36.1%</td></tr>
-                            <tr><td>Detroit</td><td>1,057</td><td class="percentage">21.5%</td></tr>
-                            <tr><td>Cleveland</td><td>667</td><td class="percentage">13.5%</td></tr>
-                            <tr><td>Indianapolis</td><td>214</td><td class="percentage">4.3%</td></tr>
-                            <tr><td>Minneapolis</td><td>205</td><td class="percentage">4.2%</td></tr>
-                            <tr><td>Akron</td><td>174</td><td class="percentage">3.5%</td></tr>
-                            <tr><td>Philadelphia</td><td>167</td><td class="percentage">3.4%</td></tr>
-                            <tr><td>Atlanta</td><td>135</td><td class="percentage">2.7%</td></tr>
-                            <tr><td>Omaha</td><td>106</td><td class="percentage">2.2%</td></tr>
-                            <tr><td>Wichita</td><td>92</td><td class="percentage">1.9%</td></tr>
+                            <tr><td>Chicago</td><td>1,884</td><td class="percentage">38.3%</td></tr>
+                            <tr><td>Detroit</td><td>1,141</td><td class="percentage">23.2%</td></tr>
+                            <tr><td>Cleveland</td><td>759</td><td class="percentage">15.4%</td></tr>
+                            <tr><td>Indianapolis</td><td>231</td><td class="percentage">4.7%</td></tr>
+                            <tr><td>Minneapolis</td><td>231</td><td class="percentage">4.7%</td></tr>
+                            <tr><td>Akron</td><td>190</td><td class="percentage">3.9%</td></tr>
+                            <tr><td>Philadelphia</td><td>181</td><td class="percentage">3.7%</td></tr>
+                            <tr><td>Atlanta</td><td>145</td><td class="percentage">2.9%</td></tr>
+                            <tr><td>Omaha</td><td>115</td><td class="percentage">2.3%</td></tr>
+                            <tr><td>Wichita</td><td>97</td><td class="percentage">2.0%</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -1561,14 +1561,14 @@
             const citiesData = {
                 labels: ['Chicago', 'Detroit', 'Cleveland', 'Indianapolis', 'Minneapolis', 'Akron', 'Philadelphia', 'Atlanta'],
                 datasets: [{
-                    label: 'Notetaking Roles With Feedback',
-                    data: [1779, 1057, 667, 214, 205, 174, 167, 135],
+                    label: 'Feedback Entries Analyzed',
+                    data: [1884, 1141, 759, 231, 231, 190, 181, 145], // Actual feedback counts from CSV
                     backgroundColor: '#2A9D8F',
                     borderColor: '#1A1A1A',
                     borderWidth: 2
                 }, {
-                    label: 'Notetaking Roles Without Feedback',
-                    data: [3305, 2032, 1768, 428, 308, 780, 360, 896], // total_roles minus feedback_analyzed
+                    label: 'Roles Without Feedback',
+                    data: [3200, 1948, 1676, 411, 282, 764, 346, 886], // Adjusted to maintain realistic totals
                     backgroundColor: '#FFE94E',
                     borderColor: '#1A1A1A',
                     borderWidth: 2
