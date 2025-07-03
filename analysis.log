@@ -1,0 +1,352 @@
+2025-07-02 20:42:50,607 - INFO - Loading feedback data...
+2025-07-02 20:42:50,628 - INFO - Loaded 4926 feedback entries
+2025-07-02 20:42:50,628 - INFO - Generating embeddings...
+2025-07-02 20:42:50,844 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:42:50,846 - WARNING - Batch 0 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:42:52,971 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:42:52,971 - WARNING - Batch 0 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:42:57,102 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:42:57,103 - WARNING - Batch 0 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:42:57,220 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:42:57,221 - WARNING - Batch 1 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:42:59,335 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:42:59,337 - WARNING - Batch 1 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:03,461 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:03,463 - WARNING - Batch 1 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:03,647 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:03,649 - WARNING - Batch 2 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:05,771 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:05,772 - WARNING - Batch 2 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:09,895 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:09,896 - WARNING - Batch 2 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:10,005 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:10,006 - WARNING - Batch 3 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:12,116 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:12,116 - WARNING - Batch 3 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:16,241 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:16,242 - WARNING - Batch 3 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:16,349 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:16,350 - WARNING - Batch 4 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:18,466 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:18,468 - WARNING - Batch 4 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:22,558 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:22,560 - WARNING - Batch 4 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:22,686 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:22,688 - WARNING - Batch 5 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:24,813 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:24,816 - WARNING - Batch 5 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:28,932 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:28,934 - WARNING - Batch 5 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:29,136 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:29,137 - WARNING - Batch 6 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:31,259 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:31,260 - WARNING - Batch 6 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:35,377 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:35,379 - WARNING - Batch 6 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:35,579 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:35,581 - WARNING - Batch 7 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:37,704 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:37,704 - WARNING - Batch 7 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:41,823 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:41,823 - WARNING - Batch 7 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:41,941 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:41,942 - WARNING - Batch 8 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:44,066 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:44,067 - WARNING - Batch 8 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:48,187 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:48,189 - WARNING - Batch 8 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:48,393 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:48,394 - WARNING - Batch 9 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:50,513 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:50,513 - WARNING - Batch 9 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:54,603 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:54,605 - WARNING - Batch 9 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:54,725 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:54,726 - WARNING - Batch 10 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:43:56,839 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:43:56,842 - WARNING - Batch 10 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:00,959 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:00,960 - WARNING - Batch 10 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:01,070 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:01,071 - WARNING - Batch 11 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:03,198 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:03,199 - WARNING - Batch 11 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:07,318 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:07,320 - WARNING - Batch 11 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:07,440 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:07,442 - WARNING - Batch 12 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:09,568 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:09,569 - WARNING - Batch 12 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:13,666 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:13,667 - WARNING - Batch 12 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:13,784 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:13,786 - WARNING - Batch 13 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:15,908 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:15,910 - WARNING - Batch 13 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:20,032 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:20,032 - WARNING - Batch 13 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:20,226 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:20,227 - WARNING - Batch 14 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:22,351 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:22,352 - WARNING - Batch 14 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:26,477 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:26,479 - WARNING - Batch 14 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:26,594 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:26,595 - WARNING - Batch 15 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:28,726 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:28,727 - WARNING - Batch 15 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:32,852 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:32,853 - WARNING - Batch 15 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:32,971 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:32,972 - WARNING - Batch 16 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:35,079 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:35,081 - WARNING - Batch 16 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:39,205 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:39,206 - WARNING - Batch 16 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:39,276 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:39,277 - WARNING - Batch 17 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:41,397 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:41,398 - WARNING - Batch 17 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:45,481 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:45,483 - WARNING - Batch 17 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:45,729 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:45,730 - WARNING - Batch 18 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:47,862 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:47,864 - WARNING - Batch 18 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:52,001 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:52,002 - WARNING - Batch 18 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:52,119 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:52,120 - WARNING - Batch 19 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:54,253 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:54,255 - WARNING - Batch 19 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:58,384 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:58,386 - WARNING - Batch 19 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:44:58,581 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:44:58,582 - WARNING - Batch 20 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:00,709 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:00,709 - WARNING - Batch 20 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:04,833 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:04,834 - WARNING - Batch 20 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:05,027 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:05,028 - WARNING - Batch 21 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:07,145 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:07,146 - WARNING - Batch 21 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:11,274 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:11,275 - WARNING - Batch 21 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:11,453 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:11,454 - WARNING - Batch 22 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:13,568 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:13,570 - WARNING - Batch 22 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:17,689 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:17,691 - WARNING - Batch 22 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:17,803 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:17,804 - WARNING - Batch 23 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:19,923 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:19,925 - WARNING - Batch 23 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:24,047 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:24,049 - WARNING - Batch 23 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:24,241 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:24,243 - WARNING - Batch 24 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:26,360 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:26,362 - WARNING - Batch 24 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:30,475 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:30,476 - WARNING - Batch 24 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:30,673 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:30,675 - WARNING - Batch 25 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:32,796 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:32,797 - WARNING - Batch 25 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:36,913 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:36,915 - WARNING - Batch 25 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:37,108 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:37,108 - WARNING - Batch 26 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:39,227 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:39,228 - WARNING - Batch 26 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:43,343 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:43,343 - WARNING - Batch 26 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:43,541 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:43,542 - WARNING - Batch 27 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:45,668 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:45,670 - WARNING - Batch 27 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:49,792 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:49,792 - WARNING - Batch 27 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:49,994 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:49,995 - WARNING - Batch 28 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:52,122 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:52,123 - WARNING - Batch 28 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:56,245 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:56,247 - WARNING - Batch 28 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:56,331 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:56,332 - WARNING - Batch 29 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:45:58,453 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:45:58,454 - WARNING - Batch 29 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:02,571 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:02,572 - WARNING - Batch 29 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:02,773 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:02,775 - WARNING - Batch 30 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:04,896 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:04,898 - WARNING - Batch 30 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:09,026 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:09,028 - WARNING - Batch 30 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:09,151 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:09,152 - WARNING - Batch 31 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:11,276 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:11,277 - WARNING - Batch 31 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:15,404 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:15,405 - WARNING - Batch 31 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:15,520 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:15,521 - WARNING - Batch 32 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:17,641 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:17,643 - WARNING - Batch 32 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:21,767 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:21,770 - WARNING - Batch 32 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:21,959 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:21,961 - WARNING - Batch 33 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:24,085 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:24,086 - WARNING - Batch 33 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:28,174 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:28,176 - WARNING - Batch 33 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:28,259 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:28,261 - WARNING - Batch 34 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:30,367 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:30,368 - WARNING - Batch 34 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:34,483 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:34,484 - WARNING - Batch 34 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:34,566 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:34,567 - WARNING - Batch 35 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:36,685 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:36,686 - WARNING - Batch 35 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:40,771 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:40,773 - WARNING - Batch 35 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:40,862 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:40,864 - WARNING - Batch 36 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:43,003 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:43,004 - WARNING - Batch 36 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:47,135 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:47,137 - WARNING - Batch 36 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:47,313 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:47,314 - WARNING - Batch 37 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:49,438 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:49,440 - WARNING - Batch 37 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:53,533 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:53,534 - WARNING - Batch 37 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:53,760 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:53,761 - WARNING - Batch 38 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:55,888 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:55,890 - WARNING - Batch 38 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:46:59,976 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:46:59,977 - WARNING - Batch 38 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:00,062 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:00,063 - WARNING - Batch 39 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:02,184 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:02,185 - WARNING - Batch 39 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:06,305 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:06,305 - WARNING - Batch 39 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:06,404 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:06,405 - WARNING - Batch 40 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:08,533 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:08,534 - WARNING - Batch 40 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:12,625 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:12,625 - WARNING - Batch 40 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:12,711 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:12,712 - WARNING - Batch 41 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:14,804 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:14,805 - WARNING - Batch 41 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:18,926 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:18,928 - WARNING - Batch 41 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:19,129 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:19,129 - WARNING - Batch 42 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:21,252 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:21,253 - WARNING - Batch 42 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:25,345 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:25,347 - WARNING - Batch 42 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:25,437 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:25,439 - WARNING - Batch 43 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:27,542 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:27,544 - WARNING - Batch 43 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:31,677 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:31,678 - WARNING - Batch 43 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:31,867 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:31,869 - WARNING - Batch 44 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:33,995 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:33,996 - WARNING - Batch 44 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:38,086 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:38,087 - WARNING - Batch 44 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:38,191 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:38,193 - WARNING - Batch 45 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:40,323 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:40,324 - WARNING - Batch 45 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:44,423 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:44,424 - WARNING - Batch 45 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:44,508 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:44,509 - WARNING - Batch 46 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:46,638 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:46,639 - WARNING - Batch 46 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:50,770 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:50,771 - WARNING - Batch 46 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:50,891 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:50,892 - WARNING - Batch 47 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:53,038 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:53,040 - WARNING - Batch 47 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:57,160 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:57,161 - WARNING - Batch 47 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:57,256 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:57,257 - WARNING - Batch 48 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:47:59,349 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:47:59,350 - WARNING - Batch 48 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:48:03,494 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:48:03,496 - WARNING - Batch 48 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:48:03,563 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:48:03,563 - WARNING - Batch 49 attempt 1 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:48:05,642 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:48:05,643 - WARNING - Batch 49 attempt 2 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:48:09,711 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 400 Bad Request"
+2025-07-02 20:48:09,713 - WARNING - Batch 49 attempt 3 failed: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '`title` cannot be specified with task_type 5', 'status': 'INVALID_ARGUMENT'}}
+2025-07-02 20:48:09,720 - INFO - Embedding generation complete. Failed: 4926
+2025-07-02 20:48:09,720 - INFO - Loading embeddings for clustering...
+2025-07-02 20:48:09,726 - INFO - Clustering 0 embeddings...
+2025-07-02 20:48:09,727 - ERROR - Analysis failed: Expected 2D array, got 1D array instead:
+array=[].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2025-07-02 20:48:39,861 - INFO - Loaded checkpoint: 4100 processed
+2025-07-02 20:48:39,861 - INFO - Loading feedback data...
+2025-07-02 20:48:39,884 - INFO - Loaded 4926 feedback entries
+2025-07-02 20:48:39,891 - INFO - Generating embeddings...
+2025-07-02 20:48:40,634 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 200 OK"
+2025-07-02 20:48:40,868 - WARNING - Batch 41 attempt 1 failed: UNIQUE constraint failed: batch_progress.batch_id
+2025-07-02 20:48:43,677 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 200 OK"
+2025-07-02 20:48:43,918 - WARNING - Batch 41 attempt 2 failed: UNIQUE constraint failed: batch_progress.batch_id
+2025-07-02 20:48:48,626 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 200 OK"
+2025-07-02 20:48:48,865 - WARNING - Batch 41 attempt 3 failed: UNIQUE constraint failed: batch_progress.batch_id
+2025-07-02 20:48:48,867 - ERROR - Analysis failed: UNIQUE constraint failed: batch_progress.batch_id
+2025-07-02 20:50:59,999 - INFO - Loaded checkpoint: 4100 processed
+2025-07-02 20:50:59,999 - INFO - Loading feedback data...
+2025-07-02 20:51:00,019 - INFO - Loaded 4926 feedback entries
+2025-07-02 20:51:00,025 - INFO - Generating embeddings...
+2025-07-02 20:51:00,956 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 200 OK"
+2025-07-02 20:51:02,012 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 200 OK"
+2025-07-02 20:51:03,086 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 200 OK"
+2025-07-02 20:51:04,397 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 200 OK"
+2025-07-02 20:51:05,513 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 200 OK"
+2025-07-02 20:51:06,597 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 200 OK"
+2025-07-02 20:51:07,678 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 200 OK"
+2025-07-02 20:51:08,834 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 200 OK"
+2025-07-02 20:51:09,610 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 200 OK"
+2025-07-02 20:51:09,776 - INFO - Embedding generation complete. Failed: 4100
+2025-07-02 20:51:09,777 - INFO - Loading embeddings for clustering...
+2025-07-02 20:51:09,860 - INFO - Clustering 826 embeddings...
+2025-07-02 20:51:14,239 - INFO - Creating 2D visualization...
+2025-07-02 20:51:15,327 - INFO - Updating cluster assignments...
+2025-07-02 20:51:15,369 - INFO - Found 6 clusters
+2025-07-02 20:51:15,369 - INFO - Noise points: 318
+2025-07-02 20:51:15,370 - INFO - Analyzing clusters...
+2025-07-02 20:51:15,370 - INFO - Analyzing 6 clusters...
+2025-07-02 20:51:15,371 - ERROR - Failed to process cluster 0: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 8447877248 and this is thread id 6130921472.
+2025-07-02 20:51:15,371 - ERROR - Failed to process cluster 5: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 8447877248 and this is thread id 6130921472.
+2025-07-02 20:51:15,371 - ERROR - Failed to process cluster 2: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 8447877248 and this is thread id 6130921472.
+2025-07-02 20:51:15,371 - ERROR - Failed to process cluster 4: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 8447877248 and this is thread id 6164574208.
+2025-07-02 20:51:15,371 - ERROR - Failed to process cluster 1: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 8447877248 and this is thread id 6164574208.
+2025-07-02 20:51:15,371 - ERROR - Failed to process cluster 3: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 8447877248 and this is thread id 6164574208.
+2025-07-02 20:51:15,371 - INFO - Cluster analysis complete!
+2025-07-02 20:51:15,371 - INFO - Generating visualizations...
+2025-07-02 20:51:15,645 - INFO - Visualizations complete!
+2025-07-02 20:51:15,646 - INFO - Analysis complete! Total time: 0.3 minutes

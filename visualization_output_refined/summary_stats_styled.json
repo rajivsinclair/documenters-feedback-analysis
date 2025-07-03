@@ -1,0 +1,17 @@
+{
+  "total_entries": 3872,
+  "num_clusters": 10,
+  "num_programs": 22,
+  "date_range": "2018-10-24 15:51:54.359283+00 to 2025-07-01 15:50:36.142239+00",
+  "largest_cluster": {
+    "id": 2,
+    "size": 769,
+    "percentage": 19.860537190082646
+  },
+  "smallest_cluster": {
+    "id": 9,
+    "size": 124,
+    "percentage": 3.202479338842975
+  },
+  "generation_time": "2025-07-02T23:40:04.523673"
+}

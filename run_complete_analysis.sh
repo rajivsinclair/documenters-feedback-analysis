@@ -1,0 +1,42 @@
+#!/bin/bash
+
+echo "=========================================="
+echo "DOCUMENTERS FEEDBACK COMPLETE ANALYSIS"
+echo "=========================================="
+echo ""
+echo "This script will analyze ALL 4,926 feedback entries"
+echo "using the Google Gemini API."
+echo ""
+echo "ESTIMATED TIME: 4-6 minutes"
+echo "API CALLS: ~50 embedding batches + cluster descriptions"
+echo ""
+echo "The analysis will:"
+echo "1. Generate embeddings for all feedback entries"
+echo "2. Cluster them using HDBSCAN algorithm"
+echo "3. Generate AI descriptions for each cluster"
+echo "4. Create interactive visualizations"
+echo "5. Generate a comprehensive report"
+echo ""
+echo "Output will be saved to:"
+echo "- visualization_output/cluster_scatter.html"
+echo "- visualization_output/cluster_report.md"
+echo "- visualization_output/cluster_sizes.html"
+echo ""
+echo "IMPORTANT: Make sure you have:"
+echo "- A stable internet connection"
+echo "- The correct API key configured"
+echo "- About 100MB free disk space"
+echo ""
+read -p "Press Enter to start the analysis or Ctrl+C to cancel..."
+
+echo ""
+echo "Starting analysis..."
+echo "You can monitor progress in another terminal with:"
+echo "python monitor_analysis.py --continuous"
+echo ""
+
+# Run the analysis
+python3 embedding_analysis_optimized.py
+
+echo ""
+echo "Analysis complete! Check the visualization_output folder for results."

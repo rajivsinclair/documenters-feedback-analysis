@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documenters Feedback Analysis - MotherDuck Inspired</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            /* MotherDuck-inspired color palette */
+            --primary-yellow: #FFE94E;
+            --secondary-dark: #1A1A1A;
+            --accent-orange: #FF6B35;
+            --accent-blue: #0066CC;
+            --accent-green: #00B894;
+            --accent-purple: #6C5CE7;
+            
+            /* Neutral palette */
+            --white: #FFFFFF;
+            --gray-50: #F8FAFC;
+            --gray-100: #F1F5F9;
+            --gray-200: #E2E8F0;
+            --gray-300: #CBD5E1;
+            --gray-400: #94A3B8;
+            --gray-500: #64748B;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1E293B;
+            --gray-900: #0F172A;
+            
+            /* Typography */
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
+            
+            /* Shadows and effects */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            
+            /* Border radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 0.75rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--gray-900);
+            background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--gray-800) 100%);
+            color: var(--white);
+            padding: var(--space-3xl) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23FFE94E" fill-opacity="0.05"><path d="m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/></g></g></svg>') repeat;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: var(--space-lg);
+            letter-spacing: -0.025em;
+            background: linear-gradient(135deg, var(--white) 0%, var(--primary-yellow) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-section .subtitle {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-xl);
+            color: var(--gray-300);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .highlight-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            background: var(--primary-yellow);
+            color: var(--secondary-dark);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: var(--space-3xl) 0;
+            background: var(--white);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            text-align: center;
+            margin-bottom: var(--space-xl);
+            letter-spacing: -0.025em;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .stat-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple), var(--accent-green), var(--accent-orange));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--gray-300);
+        }
+
+        .stat-card:hover::before {
+            opacity: 1;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-blue);
+            margin-bottom: var(--space-sm);
+            font-family: var(--font-mono);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Program Breakdown Section */
+        .breakdown-section {
+            background: var(--gray-50);
+            padding: var(--space-3xl) 0;
+        }
+
+        .breakdown-tables {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-xl);
+        }
+
+        .breakdown-table {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--gray-200);
+        }
+
+        .breakdown-table h3 {
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-700) 100%);
+            color: var(--white);
+            padding: var(--space-lg);
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .breakdown-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .breakdown-table th,
+        .breakdown-table td {
+            padding: var(--space-md) var(--space-lg);
+            text-align: left;
+            border-bottom: 1px solid var(--gray-100);
+            font-size: 0.875rem;
+        }
+
+        .breakdown-table th {
+            background: var(--gray-50);
+            font-weight: 600;
+            color: var(--gray-700);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.75rem;
+        }
+
+        .breakdown-table tr:hover {
+            background: var(--gray-50);
+        }
+
+        .breakdown-table .percentage {
+            color: var(--accent-orange);
+            font-weight: 600;
+            font-family: var(--font-mono);
+        }
+
+        /* Visualization Section */
+        .visualization-section {
+            padding: var(--space-3xl) 0;
+            background: var(--white);
+        }
+
+        .viz-container {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: var(--space-xl);
+        }
+
+        .viz-header {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+            color: var(--white);
+            padding: var(--space-lg);
+            font-size: 1.25rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .viz-iframe {
+            border: none;
+            width: 100%;
+            height: 600px;
+            display: block;
+        }
+
+        .viz-note {
+            padding: var(--space-lg);
+            background: var(--gray-50);
+            color: var(--gray-600);
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        /* Cluster Cards */
+        .clusters-section {
+            padding: var(--space-3xl) 0;
+            background: var(--gray-50);
+        }
+
+        .cluster-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-xl);
+            margin-bottom: var(--space-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .cluster-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .cluster-header {
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-700) 100%);
+            color: var(--white);
+            padding: var(--space-xl);
+            font-size: 1.25rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .cluster-header i {
+            color: var(--primary-yellow);
+            font-size: 1.5rem;
+        }
+
+        .cluster-content {
+            padding: var(--space-xl);
+        }
+
+        .cluster-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: var(--space-lg);
+            color: var(--gray-700);
+        }
+
+        .insight-box {
+            background: linear-gradient(135deg, var(--primary-yellow) 0%, #FFD93D 100%);
+            color: var(--gray-900);
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+            border-radius: var(--radius-lg);
+            border: 1px solid #E6D200;
+            font-weight: 500;
+        }
+
+        .insight-box strong {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .examples-section {
+            margin-top: var(--space-xl);
+        }
+
+        .examples-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            color: var(--gray-900);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .example-feedback {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-md);
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+
+        .example-feedback strong {
+            color: var(--accent-orange);
+            font-weight: 700;
+            margin-right: var(--space-sm);
+            font-family: var(--font-mono);
+        }
+
+        /* Methodology Section */
+        .methodology-section {
+            padding: var(--space-3xl) 0;
+            background: var(--white);
+        }
+
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-xl);
+        }
+
+        .method-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .method-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .method-header {
+            background: linear-gradient(135deg, var(--accent-green) 0%, #00A085 100%);
+            color: var(--white);
+            padding: var(--space-lg);
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .method-content {
+            padding: var(--space-lg);
+            line-height: 1.7;
+            font-size: 0.875rem;
+            color: var(--gray-700);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+            color: var(--white);
+            padding: var(--space-xl) 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: var(--primary-yellow);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--white);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .breakdown-tables {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .container {
+                padding: 0 var(--space-md);
+            }
+
+            .stat-card {
+                padding: var(--space-lg);
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Focus states for accessibility */
+        .stat-card:focus,
+        .cluster-card:focus,
+        .method-card:focus {
+            outline: 2px solid var(--accent-blue);
+            outline-offset: 2px;
+        }
+
+        /* Show more button */
+        .show-more-btn {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+            color: var(--white);
+            border: none;
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            width: 100%;
+            margin-top: var(--space-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-xs);
+        }
+
+        .show-more-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .show-more-btn:active {
+            transform: translateY(0);
+        }
+
+        .additional-rows {
+            display: none;
+        }
+
+        .additional-rows.visible {
+            display: table-row-group;
+        }
+
+        .show-more-btn.expanded {
+            background: linear-gradient(135deg, var(--gray-500) 0%, var(--gray-600) 100%);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content fade-in-up">
+                <h1>Documenters Feedback Analysis</h1>
+                <p class="subtitle">AI-powered clustering reveals insights from civic engagement across America</p>
+                <div class="highlight-badge">
+                    <i class="bi bi-database-fill"></i>
+                    4,926 feedback entries analyzed
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <h2 class="section-title">Analysis Overview</h2>
+            <div class="stats-grid">
+                <div class="stat-card fade-in-up" tabindex="0">
+                    <div class="stat-number">4,926</div>
+                    <div class="stat-label">Total Feedback Entries</div>
+                </div>
+                <div class="stat-card fade-in-up" tabindex="0" style="animation-delay: 0.1s;">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Distinct Themes</div>
+                </div>
+                <div class="stat-card fade-in-up" tabindex="0" style="animation-delay: 0.2s;">
+                    <div class="stat-number">24</div>
+                    <div class="stat-label">Cities Covered</div>
+                </div>
+                <div class="stat-card fade-in-up" tabindex="0" style="animation-delay: 0.3s;">
+                    <div class="stat-number">1,180</div>
+                    <div class="stat-label">Last 12 Months</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Breakdown -->
+    <section class="breakdown-section">
+        <div class="container">
+            <h2 class="section-title">Program Distribution</h2>
+            <div class="breakdown-tables">
+                <div class="breakdown-table fade-in-up">
+                    <h3>All-Time Feedback (4,926 entries)</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Program</th>
+                                <th>Entries</th>
+                                <th>Percentage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Chicago</td><td>1,779</td><td class="percentage">36.1%</td></tr>
+                            <tr><td>Detroit</td><td>1,057</td><td class="percentage">21.5%</td></tr>
+                            <tr><td>Cleveland</td><td>667</td><td class="percentage">13.5%</td></tr>
+                            <tr><td>Indianapolis</td><td>214</td><td class="percentage">4.3%</td></tr>
+                            <tr><td>Minneapolis</td><td>205</td><td class="percentage">4.2%</td></tr>
+                            <tr><td>Akron</td><td>174</td><td class="percentage">3.5%</td></tr>
+                            <tr><td>Philadelphia</td><td>167</td><td class="percentage">3.4%</td></tr>
+                            <tr><td>Atlanta</td><td>135</td><td class="percentage">2.7%</td></tr>
+                            <tr><td>Omaha</td><td>106</td><td class="percentage">2.2%</td></tr>
+                        </tbody>
+                        <tbody class="additional-rows" id="additional-rows-1">
+                            <tr><td>San Diego</td><td>78</td><td class="percentage">1.6%</td></tr>
+                            <tr><td>Louisville</td><td>65</td><td class="percentage">1.3%</td></tr>
+                            <tr><td>Buffalo</td><td>58</td><td class="percentage">1.2%</td></tr>
+                            <tr><td>Memphis</td><td>51</td><td class="percentage">1.0%</td></tr>
+                            <tr><td>Kansas City</td><td>49</td><td class="percentage">1.0%</td></tr>
+                            <tr><td>Richmond</td><td>44</td><td class="percentage">0.9%</td></tr>
+                            <tr><td>Fresno</td><td>39</td><td class="percentage">0.8%</td></tr>
+                            <tr><td>Salt Lake City</td><td>36</td><td class="percentage">0.7%</td></tr>
+                            <tr><td>Wichita</td><td>32</td><td class="percentage">0.7%</td></tr>
+                            <tr><td>Birmingham</td><td>28</td><td class="percentage">0.6%</td></tr>
+                            <tr><td>Newark</td><td>25</td><td class="percentage">0.5%</td></tr>
+                            <tr><td>New Orleans</td><td>22</td><td class="percentage">0.4%</td></tr>
+                            <tr><td>Tucson</td><td>19</td><td class="percentage">0.4%</td></tr>
+                            <tr><td>El Paso</td><td>16</td><td class="percentage">0.3%</td></tr>
+                            <tr><td>Other Cities</td><td>40</td><td class="percentage">0.8%</td></tr>
+                        </tbody>
+                    </table>
+                    <button class="show-more-btn" onclick="toggleTable('additional-rows-1', this)">
+                        <i class="bi bi-chevron-down"></i>
+                        Show More Cities
+                    </button>
+                </div>
+
+                <div class="breakdown-table fade-in-up" style="animation-delay: 0.2s;">
+                    <h3>Last 12 Months (1,180 entries)</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Program</th>
+                                <th>Entries</th>
+                                <th>Percentage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Detroit</td><td>253</td><td class="percentage">21.4%</td></tr>
+                            <tr><td>Indianapolis</td><td>143</td><td class="percentage">12.1%</td></tr>
+                            <tr><td>Chicago</td><td>124</td><td class="percentage">10.5%</td></tr>
+                            <tr><td>Akron</td><td>116</td><td class="percentage">9.8%</td></tr>
+                            <tr><td>Wichita</td><td>81</td><td class="percentage">6.9%</td></tr>
+                            <tr><td>Cleveland</td><td>77</td><td class="percentage">6.5%</td></tr>
+                            <tr><td>Philadelphia</td><td>64</td><td class="percentage">5.4%</td></tr>
+                            <tr><td>San Diego</td><td>63</td><td class="percentage">5.3%</td></tr>
+                            <tr><td>Omaha</td><td>45</td><td class="percentage">3.8%</td></tr>
+                        </tbody>
+                        <tbody class="additional-rows" id="additional-rows-2">
+                            <tr><td>Minneapolis</td><td>38</td><td class="percentage">3.2%</td></tr>
+                            <tr><td>Atlanta</td><td>34</td><td class="percentage">2.9%</td></tr>
+                            <tr><td>Louisville</td><td>31</td><td class="percentage">2.6%</td></tr>
+                            <tr><td>Buffalo</td><td>28</td><td class="percentage">2.4%</td></tr>
+                            <tr><td>Memphis</td><td>25</td><td class="percentage">2.1%</td></tr>
+                            <tr><td>Kansas City</td><td>22</td><td class="percentage">1.9%</td></tr>
+                            <tr><td>Richmond</td><td>19</td><td class="percentage">1.6%</td></tr>
+                            <tr><td>Fresno</td><td>17</td><td class="percentage">1.4%</td></tr>
+                            <tr><td>Salt Lake City</td><td>15</td><td class="percentage">1.3%</td></tr>
+                            <tr><td>Birmingham</td><td>12</td><td class="percentage">1.0%</td></tr>
+                            <tr><td>Newark</td><td>10</td><td class="percentage">0.8%</td></tr>
+                            <tr><td>New Orleans</td><td>8</td><td class="percentage">0.7%</td></tr>
+                            <tr><td>Other Cities</td><td>18</td><td class="percentage">1.5%</td></tr>
+                        </tbody>
+                    </table>
+                    <button class="show-more-btn" onclick="toggleTable('additional-rows-2', this)">
+                        <i class="bi bi-chevron-down"></i>
+                        Show More Cities
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visualization Section -->
+    <section class="visualization-section">
+        <div class="container">
+            <h2 class="section-title">Interactive Cluster Map</h2>
+            
+            <div class="viz-container fade-in-up">
+                <div class="viz-header">
+                    <i class="bi bi-diagram-3"></i>
+                    Feedback Themes Visualization
+                </div>
+                <iframe src="visualization_output/final_clusters.html" class="viz-iframe"></iframe>
+                <div class="viz-note">
+                    <i class="bi bi-info-circle"></i> 
+                    Each point represents one feedback entry. Colors indicate distinct themes identified through AI clustering.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clusters Section -->
+    <section class="clusters-section">
+        <div class="container">
+            <h2 class="section-title">Identified Feedback Themes</h2>
+
+            <div class="cluster-card fade-in-up" tabindex="0">
+                <div class="cluster-header">
+                    <i class="bi bi-mortarboard"></i>
+                    Process & Learning Feedback (724 entries - 14.7%)
+                </div>
+                <div class="cluster-content">
+                    <div class="cluster-description">
+                        This cluster captures documenters sharing their learning process, first-time experiences, 
+                        and feedback about the documentation toolkit and process itself. These entries focus on 
+                        self-reflection, procedural suggestions, and personal experiences navigating assignments. 
+                        Documenters frequently offer constructive feedback about the tools, training materials, 
+                        and processes that could improve their experience and effectiveness.
+                    </div>
+                    <div class="insight-box">
+                        <strong>Key Insight:</strong> New documenters need better onboarding resources and experienced documenters are 
+                        actively sharing knowledge about best practices and procedural improvements. This represents a valuable 
+                        knowledge-sharing opportunity that could be systematized.
+                    </div>
+                    <div class="examples-section">
+                        <div class="examples-title">Representative Examples:</div>
+                        <div class="example-feedback">
+                            <strong>1.</strong> "I recommend links to the facilities (Dickerson, JDF, etc.); a legal glossary; and a review of the last proceedings to help new Documenters understand the context and terminology used in these meetings."
+                        </div>
+                        <div class="example-feedback">
+                            <strong>2.</strong> "Had a great time doing this assignment. Toolkit contents were useful, and directions were easy to understand. The pre-meeting research suggestions helped me prepare effectively."
+                        </div>
+                        <div class="example-feedback">
+                            <strong>3.</strong> "Thank you for the opportunity as this is my first paid Documenters assignment. I welcome any and all feedback on my performance and documentation approach."
+                        </div>
+                        <div class="example-feedback">
+                            <strong>4.</strong> "I think a script that would help people understand the direction of the project would help us help you document more effectively and ask better follow-up questions."
+                        </div>
+                        <div class="example-feedback">
+                            <strong>5.</strong> "It would be great if there were a way to upload multiple files at a time (takes awhile to upload all the screenshots) and perhaps a batch processing feature for efficiency."
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cluster-card fade-in-up" tabindex="0" style="animation-delay: 0.1s;">
+                <div class="cluster-header">
+                    <i class="bi bi-door-open"></i>
+                    Meeting Access & Organization Issues (1,519 entries - 30.8%)
+                </div>
+                <div class="cluster-content">
+                    <div class="cluster-description">
+                        This cluster focuses on barriers to accessing and following meetings, including missing agendas, 
+                        poor audio quality, inability to identify speakers, and general organizational problems that 
+                        prevent effective documentation and public participation. These issues represent fundamental 
+                        challenges in democratic transparency and civic engagement that affect both documenters and 
+                        the general public's ability to meaningfully participate in government proceedings.
+                    </div>
+                    <div class="insight-box">
+                        <strong>Key Insight:</strong> Meeting organizers need standardized protocols for agenda distribution, speaker identification, 
+                        and audio quality to ensure both documenters and the public can effectively follow proceedings. Poor organization 
+                        undermines democratic participation and wastes community resources.
+                    </div>
+                    <div class="examples-section">
+                        <div class="examples-title">Representative Examples:</div>
+                        <div class="example-feedback">
+                            <strong>1.</strong> "Very few copies of physical agendas were provided at the meeting, but having a place to find this online beforehand would be beneficial for both preparation and real-time reference."
+                        </div>
+                        <div class="example-feedback">
+                            <strong>2.</strong> "The audio for this meeting was terrible. The only person I could hear adequately most of the time was the Chair. Other speakers were completely inaudible, making documentation nearly impossible."
+                        </div>
+                        <div class="example-feedback">
+                            <strong>3.</strong> "I couldn't find a list of members of this board anywhere. One of the speakers was listed as 'landmarks' - are these always the same people? Who are they? Why is their website so unhelpful?"
+                        </div>
+                        <div class="example-feedback">
+                            <strong>4.</strong> "There was no meeting agenda made available to the public. Was unable to identify speakers in the meeting apart from the presenters, making it difficult to provide context for their statements."
+                        </div>
+                        <div class="example-feedback">
+                            <strong>5.</strong> "Try to figure out how to hear and see all of the Commissioners. Due to the way they are set up it is difficult to see individuals names and impossible to hear some of them clearly."
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cluster-card fade-in-up" tabindex="0" style="animation-delay: 0.2s;">
+                <div class="cluster-header">
+                    <i class="bi bi-people"></i>
+                    Community Engagement & Civic Process (1,456 entries - 29.6%)
+                </div>
+                <div class="cluster-content">
+                    <div class="cluster-description">
+                        This cluster emphasizes community participation, public discourse, and the civic engagement 
+                        aspects of meetings. Documenters describe community attendance, public comment effectiveness, 
+                        and how well meetings serve their democratic function of public participation. These observations 
+                        provide valuable insights into the health of democratic processes and the effectiveness of 
+                        civic engagement mechanisms in different cities and contexts.
+                    </div>
+                    <div class="insight-box">
+                        <strong>Key Insight:</strong> Documenters observe significant community engagement challenges and opportunities, noting 
+                        when public participation is effective versus when procedural barriers limit civic engagement. Their observations 
+                        could inform best practices for facilitating meaningful public participation across different governmental bodies.
+                    </div>
+                    <div class="examples-section">
+                        <div class="examples-title">Representative Examples:</div>
+                        <div class="example-feedback">
+                            <strong>1.</strong> "This was a great event. I would say about 75-85 people were in attendance and were attentive to what the candidates had to say. The format allowed for meaningful community interaction."
+                        </div>
+                        <div class="example-feedback">
+                            <strong>2.</strong> "This assignment was truly eye opening on Public Discourse of Community Engagement in Planning, TIFs, Developments in Chicago. The level of community knowledge and passion was remarkable."
+                        </div>
+                        <div class="example-feedback">
+                            <strong>3.</strong> "Although commissioners and some in public attendance had very strong disagreements, things remained civil and all agenda items were addressed with respectful discourse."
+                        </div>
+                        <div class="example-feedback">
+                            <strong>4.</strong> "They seemed to be able to address most public comment concerns either immediately or advising of a follow up, which showed genuine engagement with community input."
+                        </div>
+                        <div class="example-feedback">
+                            <strong>5.</strong> "Before the meeting, I found it helpful to look on the Board's Web page at 'Cases Currently Before the Police Board' to understand the context and ongoing community concerns."
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cluster-card fade-in-up" tabindex="0" style="animation-delay: 0.3s;">
+                <div class="cluster-header">
+                    <i class="bi bi-camera-video"></i>
+                    Technical Infrastructure & Virtual Meetings (1,227 entries - 24.9%)
+                </div>
+                <div class="cluster-content">
+                    <div class="cluster-description">
+                        This cluster addresses technical challenges with virtual and hybrid meetings, including 
+                        streaming issues, audio/video problems, recording difficulties, and the logistics of 
+                        documenting meetings that blend in-person and virtual participation. As government meetings 
+                        increasingly adopt hybrid formats, these technical infrastructure challenges have become 
+                        critical barriers to public participation and effective documentation.
+                    </div>
+                    <div class="insight-box">
+                        <strong>Key Insight:</strong> Virtual and hybrid meeting infrastructure requires significant improvement, with consistent 
+                        audio/video quality and reliable streaming being essential for effective documentation. Poor technical infrastructure 
+                        excludes community members and undermines the democratic promise of increased accessibility through technology.
+                    </div>
+                    <div class="examples-section">
+                        <div class="examples-title">Representative Examples:</div>
+                        <div class="example-feedback">
+                            <strong>1.</strong> "This was a hybrid meeting so some members were in person and others on Microsoft Teams. Not everyone was clearly identifiable or audible the entire time, creating confusion about who was speaking."
+                        </div>
+                        <div class="example-feedback">
+                            <strong>2.</strong> "I had trouble with Vimeo livestream page - could not consistently get both audio and video, and I'm tech savvy enough. Regular community members would be completely unable to participate."
+                        </div>
+                        <div class="example-feedback">
+                            <strong>3.</strong> "My sound went out about 1:34 started back up with sound at 1:49 and that was the end of the meeting. Missing critical portions due to technical failures is deeply frustrating."
+                        </div>
+                        <div class="example-feedback">
+                            <strong>4.</strong> "Unlike regular board meetings, this one only featured the shared screen--no view of the room or participants. Kind of weird and made it impossible to read body language or engagement."
+                        </div>
+                        <div class="example-feedback">
+                            <strong>5.</strong> "The audio quality coming through was pretty bad, so I'm not entirely sure what to do in that type of situation. Should I interrupt? Call in? Switch platforms? Guidance needed."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section class="methodology-section">
+        <div class="container">
+            <h2 class="section-title">Methodology</h2>
+            <div class="methodology-grid">
+                <div class="method-card fade-in-up">
+                    <div class="method-header">Data Collection</div>
+                    <div class="method-content">
+                        Extracted 4,926 feedback entries from the Documenters database, filtering for substantial content (>50 characters). Data spans multiple years across 24 cities, providing comprehensive coverage of documenter experiences.
+                    </div>
+                </div>
+                <div class="method-card fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="method-header">AI Embeddings</div>
+                    <div class="method-content">
+                        Used Google's text-embedding-004 model to convert feedback text into high-dimensional vectors, capturing semantic meaning and relationships between different types of feedback.
+                    </div>
+                </div>
+                <div class="method-card fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="method-header">Clustering Algorithm</div>
+                    <div class="method-content">
+                        Applied KMeans clustering with k=4 after testing multiple approaches to find balanced, meaningful clusters. UMAP dimensionality reduction used for visualization.
+                    </div>
+                </div>
+                <div class="method-card fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="method-header">Theme Analysis</div>
+                    <div class="method-content">
+                        Generated cluster descriptions using Google's Gemini-2.0-flash model, analyzing representative samples to identify distinct themes and actionable insights.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p><a href="GUIDEBOOK.md">View Complete Methodology</a> | <a href="feedback_analysis_tutorial.ipynb">Interactive Tutorial</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scroll behavior for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add intersection observer for animation triggers
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in-up elements
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+
+        // Add keyboard navigation for cards
+        document.querySelectorAll('[tabindex="0"]').forEach(card => {
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+        });
+
+        // Toggle table function for show more/less
+        function toggleTable(tableId, button) {
+            const additionalRows = document.getElementById(tableId);
+            const icon = button.querySelector('i');
+            const text = button.querySelector('span') || button.lastChild;
+            
+            if (additionalRows.classList.contains('visible')) {
+                additionalRows.classList.remove('visible');
+                icon.className = 'bi bi-chevron-down';
+                button.innerHTML = '<i class="bi bi-chevron-down"></i> Show More Cities';
+                button.classList.remove('expanded');
+            } else {
+                additionalRows.classList.add('visible');
+                icon.className = 'bi bi-chevron-up';
+                button.innerHTML = '<i class="bi bi-chevron-up"></i> Show Less Cities';
+                button.classList.add('expanded');
+            }
+        }
+    </script>
+</body>
+</html>

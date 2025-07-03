@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documenters Feedback Analysis - Text Clustering with AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #F1C40F;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --bg-light: #fefdf8;
+            --text-dark: #2c3e50;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .stats-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        
+        .stats-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .stats-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        .cluster-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary-color);
+        }
+        
+        .cluster-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .sample-feedback {
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-style: italic;
+            border-left: 3px solid var(--accent-color);
+        }
+        
+        .key-insight {
+            background: #f8f9fa;
+            border-left: 4px solid var(--success-color);
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .methodology-step {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .step-number {
+            background: var(--secondary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .visualization-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .btn-primary {
+            background: var(--secondary-color);
+            border: none;
+            padding: 10px 30px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .tech-badge {
+            background: var(--bg-light);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: var(--primary-color);
+        }
+        
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 40px 0;
+            margin-top: 80px;
+        }
+        
+        .navbar {
+            background: white !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            color: var(--primary-color) !important;
+        }
+        
+        .nav-link {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-diagram-3"></i> Feedback Clustering Analysis
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#overview">Overview</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#results">Results</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#methodology">Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#insights">Insights</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#resources">Resources</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">Documenters Feedback Analysis</h1>
+                    <p class="lead mb-4">
+                        Transforming thousands of text feedback entries into actionable insights using 
+                        state-of-the-art AI embeddings and clustering techniques.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#results" class="btn btn-light btn-lg">View Results</a>
+                        <a href="#methodology" class="btn btn-outline-light btn-lg">Learn How</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="bi bi-graph-up" style="font-size: 200px; opacity: 0.3;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Analysis Overview</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="stats-card text-center">
+                        <i class="bi bi-file-text" style="font-size: 3em; color: var(--secondary-color);"></i>
+                        <div class="stats-number">4,926</div>
+                        <p class="mb-0">Total Entries Analyzed</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card text-center">
+                        <i class="bi bi-diagram-3" style="font-size: 3em; color: var(--success-color);"></i>
+                        <div class="stats-number">4</div>
+                        <p class="mb-0">Distinct Clusters Found</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card text-center">
+                        <i class="bi bi-building" style="font-size: 3em; color: var(--accent-color);"></i>
+                        <div class="stats-number">24</div>
+                        <p class="mb-0">Programs Analyzed</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card text-center">
+                        <i class="bi bi-chat-text" style="font-size: 3em; color: var(--primary-color);"></i>
+                        <div class="stats-number">30.8%</div>
+                        <p class="mb-0">Largest Cluster</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Cluster Analysis Results</h2>
+            <p class="text-center mb-5">
+                Our AI-powered analysis identified 2 distinct clusters in the feedback. The vast majority (99.5%) 
+                of feedback forms a single large cluster, indicating similar documentation experiences across entries.
+            </p>
+
+            <!-- Visualization -->
+            <div class="visualization-container mb-5">
+                <h4 class="mb-3">Feedback Cluster Visualization</h4>
+                <iframe src="visualization_output/full_cluster_scatter.html" width="100%" height="600" 
+                        style="border: none; border-radius: 10px;"></iframe>
+                <p class="text-muted mt-3">
+                    <i class="bi bi-info-circle"></i> 
+                    Each point represents one of 4,926 feedback entries. Different colors show the 4 distinct 
+                    feedback themes identified by AI clustering analysis. Hover over points to see feedback details.
+                </p>
+            </div>
+
+            <!-- Cluster Descriptions -->
+            <h3 class="mb-4">Identified Clusters</h3>
+            
+            <div class="cluster-card">
+                <h4><i class="bi bi-tools"></i> Cluster 0: Logistical & Technical Challenges (724 entries - 14.7%)</h4>
+                <p>
+                    This cluster focuses on external factors that impede the documenter's ability to complete assignments, 
+                    including environmental constraints, time limitations, and pre-arrival information gaps.
+                </p>
+                <div class="key-insight">
+                    <strong>Key Insight:</strong> Environmental constraints like keycard elevators, parking issues, 
+                    connectivity problems, and unclear time commitments create significant barriers to successful documentation.
+                </div>
+                <div class="sample-feedback">
+                    "There were keycard issues getting to the elevator..." | "The meeting length was much longer than expected..." 
+                    | "WiFi connectivity was poor in the building..."
+                </div>
+            </div>
+
+            <div class="cluster-card">
+                <h4><i class="bi bi-people"></i> Cluster 1: Meeting Accessibility & Process (1,519 entries - 30.8%)</h4>
+                <p>
+                    This cluster addresses practical barriers to participation and procedural problems within meetings, 
+                    focusing on the immediate experience of attending or observing meetings and their smooth functioning.
+                </p>
+                <div class="key-insight">
+                    <strong>Key Insight:</strong> Barriers to access (physical/virtual), missing agendas, audio problems, 
+                    and unclear procedures significantly impact the documentation experience.
+                </div>
+                <div class="sample-feedback">
+                    "Meeting started 45 minutes late..." | "Could not access the agenda beforehand..." 
+                    | "Audio quality made it difficult to identify speakers..."
+                </div>
+            </div>
+
+            <div class="cluster-card">
+                <h4><i class="bi bi-eye"></i> Cluster 2: Government Transparency & Accessibility (1,456 entries - 29.6%)</h4>
+                <p>
+                    This cluster emphasizes the accessibility and openness of government processes to the public, 
+                    highlighting barriers encountered and lack of clear procedures that hinder public understanding.
+                </p>
+                <div class="key-insight">
+                    <strong>Key Insight:</strong> Difficulties in finding information, understanding procedures, 
+                    and concerns about fairness highlight the need for better civic engagement resources.
+                </div>
+                <div class="sample-feedback">
+                    "Information was difficult to find on the website..." | "The process seemed unclear to the public..." 
+                    | "Meeting procedures need better explanation for citizens..."
+                </div>
+            </div>
+
+            <div class="cluster-card">
+                <h4><i class="bi bi-camera-video"></i> Cluster 3: Meeting Logistics & Tech Issues (1,227 entries - 24.9%)</h4>
+                <p>
+                    This cluster focuses on logistical and technical aspects of meeting delivery and accessibility, 
+                    critiquing the mechanics of how meetings were experienced both in-person and virtually.
+                </p>
+                <div class="key-insight">
+                    <strong>Key Insight:</strong> Audio quality problems, livestream issues, and lack of pre-meeting 
+                    information significantly impact both documenters and public participation.
+                </div>
+                <div class="sample-feedback">
+                    "Audio had significant echoing issues..." | "Livestream ended abruptly..." 
+                    | "Speaker list should be provided before the meeting..."
+                </div>
+            </div>
+
+            <div class="cluster-card" style="background-color: #f8f9fa; border-left: 5px solid var(--accent-color);">
+                <h4><i class="bi bi-lightbulb"></i> Key Insights & Recommendations</h4>
+                <p>
+                    The 4 distinct clusters reveal specific areas for targeted improvements:
+                </p>
+                <ul>
+                    <li><strong>Logistics Guide:</strong> Create comprehensive location-specific guides with parking, access, and tech requirements</li>
+                    <li><strong>Meeting Standards:</strong> Implement standardized checklist for facilitators including agenda distribution and audio setup</li>
+                    <li><strong>Civic Engagement:</strong> Develop user-friendly guides with clear instructions for public participation</li>
+                    <li><strong>Technical Infrastructure:</strong> Ensure reliable audio-visual equipment and stable livestream connectivity</li>
+                </ul>
+                <p class="mt-3">
+                    <strong>Impact:</strong> These balanced clusters (14.7% to 30.8% each) show that documenter challenges 
+                    are diverse but addressable through targeted solutions for each specific problem area.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section id="methodology" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Our Methodology</h2>
+            <p class="text-center mb-5">
+                A step-by-step approach to transforming unstructured text into meaningful insights
+            </p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="methodology-step">
+                        <div class="step-number">1</div>
+                        <h5>Data Collection & Preparation</h5>
+                        <p>
+                            Extract feedback from database, clean and filter entries, removing very short 
+                            responses and preparing for analysis.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="methodology-step">
+                        <div class="step-number">2</div>
+                        <h5>Generate Embeddings</h5>
+                        <p>
+                            Use Google's Gemini embedding model to convert each feedback text into a 
+                            high-dimensional numerical vector representation.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="methodology-step">
+                        <div class="step-number">3</div>
+                        <h5>Dimensionality Reduction</h5>
+                        <p>
+                            Apply UMAP algorithm to reduce embedding dimensions while preserving 
+                            relationships between similar feedback.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="methodology-step">
+                        <div class="step-number">4</div>
+                        <h5>Clustering</h5>
+                        <p>
+                            Use HDBSCAN algorithm to automatically group similar feedback together 
+                            into meaningful clusters.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="methodology-step">
+                        <div class="step-number">5</div>
+                        <h5>AI Analysis</h5>
+                        <p>
+                            Leverage Gemini LLM to analyze sample feedback from each cluster and 
+                            generate human-readable descriptions of themes.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="methodology-step">
+                        <div class="step-number">6</div>
+                        <h5>Visualization & Insights</h5>
+                        <p>
+                            Create interactive visualizations and extract actionable insights for 
+                            program improvement.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <h5>Technology Stack</h5>
+                <div class="tech-stack justify-content-center">
+                    <span class="tech-badge">Python 3.8+</span>
+                    <span class="tech-badge">Google Gemini API</span>
+                    <span class="tech-badge">PostgreSQL</span>
+                    <span class="tech-badge">UMAP</span>
+                    <span class="tech-badge">HDBSCAN</span>
+                    <span class="tech-badge">Plotly</span>
+                    <span class="tech-badge">Pandas</span>
+                    <span class="tech-badge">NumPy</span>
+                    <span class="tech-badge">scikit-learn</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Insights Section -->
+    <section id="insights" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Key Insights & Recommendations</h2>
+            
+            <div class="row g-4 mt-4">
+                <div class="col-md-6">
+                    <div class="stats-card">
+                        <h4><i class="bi bi-lightbulb text-warning"></i> Universal Challenges Identified</h4>
+                        <p class="mb-3">
+                            The clustering analysis reveals that documenters across all programs face similar challenges. 
+                            Based on manual review of the feedback, common themes include:
+                        </p>
+                        <ul>
+                            <li class="mb-2">Audio quality and recording difficulties</li>
+                            <li class="mb-2">Meeting logistics and last-minute changes</li>
+                            <li class="mb-2">Need for contextual information about meetings</li>
+                            <li class="mb-2">Technical challenges with platforms and tools</li>
+                            <li class="mb-2">Accessibility and venue navigation issues</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="stats-card">
+                        <h4><i class="bi bi-graph-up-arrow text-success"></i> Recommended Actions</h4>
+                        <p class="mb-3">
+                            Given the uniformity of experiences, implement system-wide improvements:
+                        </p>
+                        <ul>
+                            <li class="mb-2">
+                                <strong>Standardized Training:</strong> Create comprehensive training 
+                                applicable to all programs
+                            </li>
+                            <li class="mb-2">
+                                <strong>Universal Toolkit:</strong> Develop standard equipment and 
+                                software recommendations
+                            </li>
+                            <li class="mb-2">
+                                <strong>Centralized Support:</strong> Build a shared knowledge base 
+                                and support system
+                            </li>
+                            <li class="mb-2">
+                                <strong>Cross-Program Learning:</strong> Facilitate sharing of best 
+                                practices between regions
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-card mt-4">
+                <h4><i class="bi bi-bar-chart text-primary"></i> By the Numbers</h4>
+                <div class="row mt-3">
+                    <div class="col-md-3 text-center">
+                        <div class="stats-number">65.6%</div>
+                        <p>Feedback entries without written notes</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div class="stats-number">41.5%</div>
+                        <p>Chicago program feedback completion</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div class="stats-number">127</div>
+                        <p>Different meeting types covered</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div class="stats-number">21</div>
+                        <p>Active documenter programs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Resources & Documentation</h2>
+            
+            <div class="row g-4 mt-4">
+                <div class="col-md-4">
+                    <div class="stats-card text-center">
+                        <i class="bi bi-book" style="font-size: 3em; color: var(--secondary-color);"></i>
+                        <h4 class="mt-3">Comprehensive Guide</h4>
+                        <p>
+                            Step-by-step guide to implementing this analysis methodology for any text dataset
+                        </p>
+                        <a href="GUIDEBOOK.md" class="btn btn-primary mt-3">Read Guide</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stats-card text-center">
+                        <i class="bi bi-code-square" style="font-size: 3em; color: var(--success-color);"></i>
+                        <h4 class="mt-3">Python Notebook</h4>
+                        <p>
+                            Interactive Jupyter notebook with complete code and explanations
+                        </p>
+                        <a href="feedback_analysis_tutorial.ipynb" class="btn btn-primary mt-3">View Notebook</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stats-card text-center">
+                        <i class="bi bi-github" style="font-size: 3em; color: var(--primary-color);"></i>
+                        <h4 class="mt-3">Source Code</h4>
+                        <p>
+                            Complete implementation with sample data and visualization scripts
+                        </p>
+                        <a href="#" class="btn btn-primary mt-3">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5 text-center">
+                <h4>Want to Apply This to Your Data?</h4>
+                <p class="lead">
+                    This methodology can be applied to any text feedback dataset. Download our resources 
+                    and follow the guide to uncover insights in your own data.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p class="mb-2">
+                <strong>Documenters Feedback Analysis</strong> | 
+                Powered by Google Gemini AI & Open Source Tools
+            </p>
+            <p class="mb-0">
+                <small>
+                    Created as part of the Documenters Program improvement initiative | 
+                    Analysis Date: July 2025
+                </small>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add active class to nav items on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

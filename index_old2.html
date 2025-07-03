@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documenters Feedback Analysis - Text Clustering with AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cooper+Hewitt:wght@400;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #FFE94E; /* Yellow from Documenters.org */
+            --secondary-color: #1A1A1A; /* Dark almost black color */
+            --accent-color: #E9340E; /* Red color from Documenters logo */
+            --link-color: #3399FF; /* Blue for links */
+            --dark-blue: #002856; /* Darker blue for emphasis */
+            --light-blue: #E5F1FF; /* Light blue background */
+            --dark-gray: #333333;
+            --medium-gray: #666666;
+            --light-gray: #F7F7F7;
+            --danger-color: #E63946;
+            --success-color: #2A9D8F;
+            --background-color: #FFFFFF;
+            --border-color: #E0E0E0;
+            --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --transition: all 0.2s ease-in-out;
+            
+            /* Typography */
+            --heading-font: 'Cooper Hewitt', 'Helvetica Neue', sans-serif;
+            --body-font: 'Source Sans 3', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--body-font);
+            line-height: 1.6;
+            color: var(--secondary-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .hero-section {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--dark-blue) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-family: var(--heading-font);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .highlight-yellow {
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--light-gray);
+            padding: 60px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .stat-number {
+            font-family: var(--heading-font);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            font-weight: 600;
+        }
+
+        /* Section headers */
+        .section-title {
+            font-family: var(--heading-font);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Visualization */
+        .visualization-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .viz-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .viz-iframe {
+            border: none;
+            border-radius: 8px;
+            width: 100%;
+            height: 600px;
+        }
+
+        .viz-note {
+            color: var(--medium-gray);
+            font-style: italic;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        /* Cluster Cards */
+        .clusters-section {
+            padding: 80px 0;
+            background: var(--light-blue);
+        }
+
+        .cluster-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .cluster-card h4 {
+            font-family: var(--heading-font);
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cluster-card h4 i {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .cluster-card p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .key-insight {
+            background: var(--light-gray);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .examples-section {
+            margin-top: 25px;
+        }
+
+        .examples-section > strong {
+            display: block;
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+            font-weight: 600;
+        }
+
+        .example-feedback {
+            background: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            border-left: 3px solid var(--link-color);
+            font-size: 0.95rem;
+        }
+
+        .example-feedback strong {
+            color: var(--accent-color);
+            margin-right: 8px;
+        }
+
+        /* Insights Section */
+        .insights-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .insight-card {
+            background: var(--light-gray);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .insight-card h5 {
+            font-family: var(--heading-font);
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .insight-card i {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--secondary-color);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: var(--primary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Documenters Feedback Analysis</h1>
+            <p>Discovering distinct themes in <span class="highlight-yellow">4,926 feedback entries</span> using AI-powered text clustering</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <h2 class="section-title">Analysis Overview</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">4,926</div>
+                    <div class="stat-label">Feedback Entries Analyzed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Distinct Themes Identified</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">30.8%</div>
+                    <div class="stat-label">Largest Theme Group</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24</div>
+                    <div class="stat-label">Documenter Programs</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visualization Section -->
+    <section class="visualization-section">
+        <div class="container">
+            <h2 class="section-title">Interactive Cluster Visualization</h2>
+            <p class="section-subtitle">
+                Each point represents one feedback entry, colored by theme. Hover to explore individual feedback.
+            </p>
+            
+            <div class="viz-container">
+                <iframe src="visualization_output/final_clusters.html" class="viz-iframe"></iframe>
+                <p class="viz-note">
+                    <i class="bi bi-info-circle"></i> 
+                    Different colors represent distinct feedback themes with no meaningless axis labels.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clusters Section -->
+    <section class="clusters-section">
+        <div class="container">
+            <h2 class="section-title">Identified Feedback Themes</h2>
+            <p class="section-subtitle">
+                Our analysis revealed 4 balanced, distinct themes in documenter feedback.
+            </p>
+
+            <div class="cluster-card">
+                <h4><i class="bi-mortarboard"></i> Process & Learning Feedback (724 entries - 14.7%)</h4>
+                <p>
+                    This cluster captures documenters sharing their learning process, first-time experiences, 
+                    and feedback about the documentation toolkit and process itself. These entries focus on 
+                    self-reflection, procedural suggestions, and personal experiences navigating assignments.
+                </p>
+                <div class="key-insight">
+                    <strong>Key Insight:</strong> New documenters need better onboarding resources and experienced documenters are 
+                    actively sharing knowledge about best practices and procedural improvements.
+                </div>
+                <div class="examples-section">
+                    <strong>Representative Examples:</strong>
+                    <div class="example-feedback">
+                        <strong>1.</strong> "I recommend links to the facilities (Dickerson, JDF, etc.); a legal glossary; and a review of the last proceedings to help new Documenters..."
+                    </div>
+                    <div class="example-feedback">
+                        <strong>2.</strong> "Had a great time doing this assignment. Toolkit contents were useful, and directions were easy to understand..."
+                    </div>
+                    <div class="example-feedback">
+                        <strong>3.</strong> "Thank you for the opportunity as this is my first paid Documenters assignment. I welcome any and all feedback..."
+                    </div>
+                    <div class="example-feedback">
+                        <strong>4.</strong> "I think a script that would help people understand the direction of the project would help us help you..."
+                    </div>
+                    <div class="example-feedback">
+                        <strong>5.</strong> "It would be great if there were a way to upload multiple files at a time (takes awhile to upload all the screenshots)..."
+                    </div>
+                </div>
+            </div>
+
+            <div class="cluster-card">
+                <h4><i class="bi-door-open"></i> Meeting Access & Organization Issues (1,519 entries - 30.8%)</h4>
+                <p>
+                    This cluster focuses on barriers to accessing and following meetings, including missing agendas, 
+                    poor audio quality, inability to identify speakers, and general organizational problems that 
+                    prevent effective documentation and public participation.
+                </p>
+                <div class="key-insight">
+                    <strong>Key Insight:</strong> Meeting organizers need standardized protocols for agenda distribution, speaker identification, 
+                    and audio quality to ensure both documenters and the public can effectively follow proceedings.
+                </div>
+                <div class="examples-section">
+                    <strong>Representative Examples:</strong>
+                    <div class="example-feedback">
+                        <strong>1.</strong> "Very few copies of physical agendas were provided at the meeting, but having a place to find this online beforehand would be beneficial..."
+                    </div>
+                    <div class="example-feedback">
+                        <strong>2.</strong> "The audio for this meeting was terrible. The only person I could hear adequately most of the time was the Chair..."
+                    </div>
+                    <div class="example-feedback">
+                        <strong>3.</strong> "I couldn't find a list of members of this board anywhere. One of the speakers was listed as 'landmarks' - are these always the same people?..."
+                    </div>
+                    <div class="example-feedback">
+                        <strong>4.</strong> "There was no meeting agenda made available to the public. Was unable to identify speakers in the meeting apart from the presenters..."
+                    </div>
+                    <div class="example-feedback">
+                        <strong>5.</strong> "Try to figure out how to hear and see all of the Commissioners. Due to the way they are set up it is difficult to see individuals names..."
+                    </div>
+                </div>
+            </div>
+
+            <div class="cluster-card">
+                <h4><i class="bi-people"></i> Community Engagement & Civic Process (1,456 entries - 29.6%)</h4>
+                <p>
+                    This cluster emphasizes community participation, public discourse, and the civic engagement 
+                    aspects of meetings. Documenters describe community attendance, public comment effectiveness, 
+                    and how well meetings serve their democratic function of public participation.
+                </p>
+                <div class="key-insight">
+                    <strong>Key Insight:</strong> Documenters observe significant community engagement challenges and opportunities, noting 
+                    when public participation is effective versus when procedural barriers limit civic engagement.
+                </div>
+                <div class="examples-section">
+                    <strong>Representative Examples:</strong>
+                    <div class="example-feedback">
+                        <strong>1.</strong> "This was a great event. I would say about 75-85 people were in attendance and were attentive to what the candidates had to say..."
+                    </div>
+                    <div class="example-feedback">
+                        <strong>2.</strong> "This assignment was truly eye opening on Public Discourse of Community Engagement in Planning, TIFs, Developments in Chicago..."
+                    </div>
+                    <div class="example-feedback">
+                        <strong>3.</strong> "Although commissioners and some in public attendance had very strong disagreements, things remained civil and all agenda items were addressed..."
+                    </div>
+                    <div class="example-feedback">
+                        <strong>4.</strong> "They seemed to be able to address most public comment concerns either immediately or advising of a follow up..."
+                    </div>
+                    <div class="example-feedback">
+                        <strong>5.</strong> "Before the meeting, I found it helpful to look on the Board's Web page at 'Cases Currently Before the Police Board'..."
+                    </div>
+                </div>
+            </div>
+
+            <div class="cluster-card">
+                <h4><i class="bi-camera-video"></i> Technical Infrastructure & Virtual Meetings (1,227 entries - 24.9%)</h4>
+                <p>
+                    This cluster addresses technical challenges with virtual and hybrid meetings, including 
+                    streaming issues, audio/video problems, recording difficulties, and the logistics of 
+                    documenting meetings that blend in-person and virtual participation.
+                </p>
+                <div class="key-insight">
+                    <strong>Key Insight:</strong> Virtual and hybrid meeting infrastructure requires significant improvement, with consistent 
+                    audio/video quality and reliable streaming being essential for effective documentation.
+                </div>
+                <div class="examples-section">
+                    <strong>Representative Examples:</strong>
+                    <div class="example-feedback">
+                        <strong>1.</strong> "This was a hybrid meeting so some members were in person and others on Microsoft Teams. Not everyone was clearly identifiable or audible..."
+                    </div>
+                    <div class="example-feedback">
+                        <strong>2.</strong> "I had trouble with Vimeo livestream page - could not consistently get both audio and video, and I'm tech savvy enough..."
+                    </div>
+                    <div class="example-feedback">
+                        <strong>3.</strong> "my sound went out about 1:34 started back up with sound at 1:49 and that was the end of the meeting..."
+                    </div>
+                    <div class="example-feedback">
+                        <strong>4.</strong> "Unlike regular board meetings, this one only featured the shared screen--no view of the room or participants. Kind of weird..."
+                    </div>
+                    <div class="example-feedback">
+                        <strong>5.</strong> "The audio quality coming through was pretty bad, so I'm not entirely sure what to do in that type of situation..."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights Section -->
+    <section class="insights-section">
+        <div class="container">
+            <h2 class="section-title">Key Insights & Recommendations</h2>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <i class="bi-book"></i>
+                    <h5>Enhanced Onboarding</h5>
+                    <p>Create comprehensive guides and glossaries for new documenters, with mentorship programs pairing experienced and new documenters.</p>
+                </div>
+                <div class="insight-card">
+                    <i class="bi-list-check"></i>
+                    <h5>Meeting Standards</h5>
+                    <p>Implement standardized protocols for agenda distribution, speaker identification, and audio setup across all meetings.</p>
+                </div>
+                <div class="insight-card">
+                    <i class="bi-chat-square-text"></i>
+                    <h5>Civic Engagement</h5>
+                    <p>Develop tools and training to help documenters better observe and report on community engagement effectiveness.</p>
+                </div>
+                <div class="insight-card">
+                    <i class="bi-wifi"></i>
+                    <h5>Technical Infrastructure</h5>
+                    <p>Invest in reliable streaming technology and provide backup recording methods for virtual and hybrid meetings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Documenters Feedback Analysis. Powered by AI clustering and community insights.</p>
+            <p><a href="GUIDEBOOK.md">View Complete Methodology</a> | <a href="feedback_analysis_tutorial.ipynb">Interactive Tutorial</a></p>
+        </div>
+    </footer>
+</body>
+</html>

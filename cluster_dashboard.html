@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documenters Feedback Cluster Analysis - 10 Cluster Insights</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Design System Variables */
+        :root {
+            --documenters-yellow: #FFE94E;
+            --near-black: #1A1A1A;
+            --bright-red: #E9340E;
+            --link-blue: #3399FF;
+            --light-gray: #F5F5F5;
+            --medium-gray: #E0E0E0;
+            --success-green: #27AE60;
+            --warning-orange: #F39C12;
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--near-black);
+            line-height: 1.6;
+        }
+        
+        /* Typography - Using Cooper Hewitt fallback for headings */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5em;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            line-height: 1.1;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            line-height: 1.2;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            line-height: 1.3;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--documenters-yellow);
+            padding: 2rem 0;
+            box-shadow: 2px 2px 0 var(--near-black);
+            position: relative;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: repeating-linear-gradient(
+                45deg,
+                var(--near-black),
+                var(--near-black) 10px,
+                transparent 10px,
+                transparent 20px
+            );
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background-color: white;
+            padding: 1.5rem;
+            border: 2px solid var(--near-black);
+            box-shadow: 2px 2px 0 var(--near-black);
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--link-blue);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #666;
+        }
+        
+        /* Section Styles */
+        .section {
+            margin: 3rem 0;
+        }
+        
+        .section-header {
+            background-color: var(--near-black);
+            color: white;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+        }
+        
+        /* Overview Card */
+        .overview-card {
+            background-color: white;
+            padding: 2rem;
+            border: 2px solid var(--near-black);
+            box-shadow: 2px 2px 0 var(--near-black);
+            margin-bottom: 2rem;
+        }
+        
+        .key-finding {
+            background-color: var(--documenters-yellow);
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid var(--near-black);
+            font-weight: 600;
+        }
+        
+        /* Cluster Cards */
+        .cluster-grid {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .cluster-card {
+            background-color: white;
+            border: 2px solid var(--near-black);
+            box-shadow: 2px 2px 0 var(--near-black);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        
+        .cluster-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0 var(--near-black);
+        }
+        
+        .cluster-header {
+            background-color: var(--link-blue);
+            color: white;
+            padding: 1.5rem;
+            position: relative;
+        }
+        
+        .cluster-header h3 {
+            margin-bottom: 0.25rem;
+        }
+        
+        .cluster-size {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .cluster-content {
+            padding: 1.5rem;
+        }
+        
+        .challenge-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+        
+        .challenge-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .challenge-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--bright-red);
+            font-weight: bold;
+        }
+        
+        .programs-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .program-tag {
+            background-color: var(--medium-gray);
+            padding: 0.25rem 0.75rem;
+            font-size: 0.85rem;
+            border: 1px solid var(--near-black);
+        }
+        
+        .recommendation-box {
+            background-color: #E8F4FD;
+            border: 2px solid var(--link-blue);
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .recommendation-box h4 {
+            color: var(--link-blue);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Visualization Container */
+        .viz-container {
+            background-color: white;
+            border: 2px solid var(--near-black);
+            box-shadow: 2px 2px 0 var(--near-black);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .viz-iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            margin-top: 1rem;
+        }
+        
+        /* Insights Section */
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .insight-card {
+            background-color: white;
+            border: 2px solid var(--near-black);
+            box-shadow: 2px 2px 0 var(--near-black);
+            padding: 1.5rem;
+        }
+        
+        .insight-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Call to Action */
+        .cta-section {
+            background-color: var(--documenters-yellow);
+            padding: 3rem 0;
+            margin-top: 4rem;
+            text-align: center;
+            border-top: 4px solid var(--near-black);
+            border-bottom: 4px solid var(--near-black);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--near-black);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0.5rem;
+            box-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+            transition: all 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--near-black);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .cluster-header h3 {
+                font-size: 1.25rem;
+            }
+        }
+        
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+        
+        .accent-text {
+            color: var(--bright-red);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-pattern"></div>
+        <div class="container header-content">
+            <h1>Documenters Feedback Cluster Analysis</h1>
+            <p style="font-size: 1.25rem; margin-top: 1rem;">Transforming 3,872 feedback entries into 10 actionable insight clusters</p>
+        </div>
+    </header>
+    
+    <!-- Summary Stats -->
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-number">3,872</span>
+                <span class="stat-label">Feedback Entries Analyzed</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">10</span>
+                <span class="stat-label">Distinct Clusters</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">24</span>
+                <span class="stat-label">Programs Represented</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Entries Clustered</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Overview Section -->
+    <div class="container section">
+        <div class="section-header">
+            <h2>Executive Overview</h2>
+        </div>
+        
+        <div class="overview-card">
+            <p>Our AI-powered analysis has identified 10 distinct patterns in documenter feedback, revealing specific challenges and opportunities for improvement across all Documenters programs. Each cluster represents a unique set of experiences and pain points that can be addressed with targeted interventions.</p>
+            
+            <div class="key-finding">
+                🔍 Key Finding: While documenters face diverse challenges, they can be grouped into 10 clear categories, enabling focused solutions for each issue type.
+            </div>
+        </div>
+    </div>
+    
+    <!-- Interactive Visualization -->
+    <div class="container section">
+        <div class="section-header">
+            <h2>Cluster Visualization</h2>
+        </div>
+        
+        <div class="viz-container">
+            <h3>Interactive Cluster Map</h3>
+            <p>Each point represents a feedback entry. Similar feedback is grouped together by color. Hover over points to explore individual feedback.</p>
+            <iframe src="visualization_output_refined/cluster_scatter_styled.html" class="viz-iframe"></iframe>
+        </div>
+    </div>
+    
+    <!-- Cluster Analysis -->
+    <div class="container section">
+        <div class="section-header">
+            <h2>Detailed Cluster Analysis</h2>
+        </div>
+        
+        <div class="cluster-grid">
+            <!-- Cluster 0 -->
+            <div class="cluster-card">
+                <div class="cluster-header">
+                    <h3>Logistical & Access Challenges</h3>
+                    <div class="cluster-size">431 entries (11.1%)</div>
+                </div>
+                <div class="cluster-content">
+                    <p>Practical, on-the-ground issues that directly impact a documenter's ability to perform their task effectively.</p>
+                    
+                    <h4>Key Challenges:</h4>
+                    <ul class="challenge-list">
+                        <li>Finding agendas and accurate meeting locations</li>
+                        <li>Security restrictions and seating limitations</li>
+                        <li>Poor audio quality and live stream issues</li>
+                        <li>Communication breakdowns and schedule changes</li>
+                    </ul>
+                    
+                    <div class="recommendation-box">
+                        <h4>Recommended Action:</h4>
+                        <p>Create a centralized resource hub with verified meeting schedules, locations, and contact information. Establish real-time support channels for field issues.</p>
+                    </div>
+                    
+                    <div class="programs-list">
+                        <span class="program-tag">Chicago: 192</span>
+                        <span class="program-tag">Detroit: 65</span>
+                        <span class="program-tag">Cleveland: 40</span>
+                        <span class="program-tag">Indianapolis: 36</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cluster 1 -->
+            <div class="cluster-card">
+                <div class="cluster-header">
+                    <h3>Accessibility & Technical Challenges</h3>
+                    <div class="cluster-size">300 entries (7.7%)</div>
+                </div>
+                <div class="cluster-content">
+                    <p>Challenges in accessing, observing, and understanding board meetings due to technological limitations and lack of transparency.</p>
+                    
+                    <h4>Key Challenges:</h4>
+                    <ul class="challenge-list">
+                        <li>Problems accessing live streams and recordings</li>
+                        <li>Poor microphone quality and video issues</li>
+                        <li>Difficulty identifying speakers in virtual settings</li>
+                        <li>Lack of access to meeting materials</li>
+                    </ul>
+                    
+                    <div class="recommendation-box">
+                        <h4>Recommended Action:</h4>
+                        <p>Standardize document sharing protocols. Improve meeting technology and moderation. Provide clear access instructions with tested links.</p>
+                    </div>
+                    
+                    <div class="programs-list">
+                        <span class="program-tag">Chicago: 98</span>
+                        <span class="program-tag">Detroit: 73</span>
+                        <span class="program-tag">Cleveland: 42</span>
+                        <span class="program-tag">Indianapolis: 17</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cluster 2 -->
+            <div class="cluster-card">
+                <div class="cluster-header">
+                    <h3>Meeting Logistics & Accessibility</h3>
+                    <div class="cluster-size">769 entries (19.9%)</div>
+                </div>
+                <div class="cluster-content">
+                    <p>Issues related to meeting logistics, accessibility, and the quality of information provided to attendees and documenters.</p>
+                    
+                    <h4>Key Challenges:</h4>
+                    <ul class="challenge-list">
+                        <li>Meetings running longer than scheduled</li>
+                        <li>Inadequate agendas and missing documents</li>
+                        <li>Technical issues with links and audio</li>
+                        <li>Unclear meeting order and disorganized proceedings</li>
+                    </ul>
+                    
+                    <div class="recommendation-box">
+                        <h4>Recommended Action:</h4>
+                        <p>Mandate advance posting of all meeting materials. Review time management practices. Standardize meeting formats across programs.</p>
+                    </div>
+                    
+                    <div class="programs-list">
+                        <span class="program-tag">Chicago: 252</span>
+                        <span class="program-tag">Detroit: 190</span>
+                        <span class="program-tag">Cleveland: 87</span>
+                        <span class="program-tag">Akron: 35</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cluster 3 -->
+            <div class="cluster-card">
+                <div class="cluster-header">
+                    <h3>Meeting Access & Clarity</h3>
+                    <div class="cluster-size">400 entries (10.3%)</div>
+                </div>
+                <div class="cluster-content">
+                    <p>Practical and logistical challenges of attending and documenting meetings effectively.</p>
+                    
+                    <h4>Key Challenges:</h4>
+                    <ul class="challenge-list">
+                        <li>Difficulties finding and understanding agendas</li>
+                        <li>Lack of speaker introductions and identification</li>
+                        <li>WiFi and technical reliability issues</li>
+                        <li>Poor room layouts and meeting environments</li>
+                    </ul>
+                    
+                    <div class="recommendation-box">
+                        <h4>Recommended Action:</h4>
+                        <p>Implement mandatory speaker introductions. Post agendas 3+ days in advance. Upgrade meeting room technology and infrastructure.</p>
+                    </div>
+                    
+                    <div class="programs-list">
+                        <span class="program-tag">Chicago: 99</span>
+                        <span class="program-tag">Cleveland: 98</span>
+                        <span class="program-tag">Detroit: 51</span>
+                        <span class="program-tag">Akron: 25</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cluster 4 -->
+            <div class="cluster-card">
+                <div class="cluster-header">
+                    <h3>Meeting Logistics & Accessibility</h3>
+                    <div class="cluster-size">300 entries (7.7%)</div>
+                </div>
+                <div class="cluster-content">
+                    <p>Process-oriented concerns about meeting structure, accessibility, and informational clarity.</p>
+                    
+                    <h4>Key Challenges:</h4>
+                    <ul class="challenge-list">
+                        <li>Inconsistent timing and venue changes</li>
+                        <li>Complex meeting procedures and unclear flow</li>
+                        <li>Zoom issues and incorrect agenda versions</li>
+                        <li>Commissioners talking over each other</li>
+                    </ul>
+                    
+                    <div class="recommendation-box">
+                        <h4>Recommended Action:</h4>
+                        <p>Standardize meeting information dissemination. Improve facilitation with clear agenda structures and speaking time limits.</p>
+                    </div>
+                    
+                    <div class="programs-list">
+                        <span class="program-tag">Detroit: 180</span>
+                        <span class="program-tag">Chicago: 77</span>
+                        <span class="program-tag">Cleveland: 10</span>
+                        <span class="program-tag">Minneapolis: 8</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cluster 5 -->
+            <div class="cluster-card">
+                <div class="cluster-header">
+                    <h3>Remote Access & Clarity Issues</h3>
+                    <div class="cluster-size">568 entries (14.7%)</div>
+                </div>
+                <div class="cluster-content">
+                    <p>Technical and logistical issues related to remote participation and information dissemination.</p>
+                    
+                    <h4>Key Challenges:</h4>
+                    <ul class="challenge-list">
+                        <li>Poor sound quality and audio dropouts</li>
+                        <li>Difficulty finding meeting links and agendas</li>
+                        <li>Challenges identifying speakers in hybrid settings</li>
+                        <li>Rapidly presented data without context</li>
+                    </ul>
+                    
+                    <div class="recommendation-box">
+                        <h4>Recommended Action:</h4>
+                        <p>Invest in high-quality audio/visual equipment. Post all materials online in advance. Require speakers to state names before speaking.</p>
+                    </div>
+                    
+                    <div class="programs-list">
+                        <span class="program-tag">Chicago: 169</span>
+                        <span class="program-tag">Detroit: 125</span>
+                        <span class="program-tag">Cleveland: 90</span>
+                        <span class="program-tag">Philadelphia: 30</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cluster 6 -->
+            <div class="cluster-card">
+                <div class="cluster-header">
+                    <h3>Documenter Real-Time Challenges</h3>
+                    <div class="cluster-size">452 entries (11.7%)</div>
+                </div>
+                <div class="cluster-content">
+                    <p>Challenges documenters face during and after meetings, including time commitment and information overload.</p>
+                    
+                    <h4>Key Challenges:</h4>
+                    <ul class="challenge-list">
+                        <li>Unexpectedly long meetings causing conflicts</li>
+                        <li>Confusion about assignment specifics</li>
+                        <li>Information overload and processing difficulties</li>
+                        <li>Platform problems and recording issues</li>
+                    </ul>
+                    
+                    <div class="recommendation-box">
+                        <h4>Recommended Action:</h4>
+                        <p>Provide clearer assignment guidelines with time estimates. Offer pre-assignment training and portable wifi hotspots for reliability.</p>
+                    </div>
+                    
+                    <div class="programs-list">
+                        <span class="program-tag">Chicago: 199</span>
+                        <span class="program-tag">Detroit: 94</span>
+                        <span class="program-tag">Cleveland: 65</span>
+                        <span class="program-tag">Philadelphia: 22</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cluster 7 -->
+            <div class="cluster-card">
+                <div class="cluster-header">
+                    <h3>Logistics & Access Hurdles</h3>
+                    <div class="cluster-size">289 entries (7.5%)</div>
+                </div>
+                <div class="cluster-content">
+                    <p>Practical difficulties and logistical challenges faced while trying to cover public meetings.</p>
+                    
+                    <h4>Key Challenges:</h4>
+                    <ul class="challenge-list">
+                        <li>Incorrect information about times and locations</li>
+                        <li>Difficulties obtaining agendas in advance</li>
+                        <li>Problems with livestreams and online platforms</li>
+                        <li>Confusion about meeting procedures and context</li>
+                    </ul>
+                    
+                    <div class="recommendation-box">
+                        <h4>Recommended Action:</h4>
+                        <p>Create centralized information verification system. Develop pre-assignment resource guides with checklists and common solutions.</p>
+                    </div>
+                    
+                    <div class="programs-list">
+                        <span class="program-tag">Chicago: 275</span>
+                        <span class="program-tag">Cleveland: 9</span>
+                        <span class="program-tag">Indianapolis: 2</span>
+                        <span class="program-tag">Detroit: 2</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cluster 8 -->
+            <div class="cluster-card">
+                <div class="cluster-header">
+                    <h3>Meeting Logistics and Accessibility</h3>
+                    <div class="cluster-size">239 entries (6.2%)</div>
+                </div>
+                <div class="cluster-content">
+                    <p>Physical and informational challenges of attending public meetings in person.</p>
+                    
+                    <h4>Key Challenges:</h4>
+                    <ul class="challenge-list">
+                        <li>Difficulty finding venues and parking</li>
+                        <li>Poor meeting room environments and acoustics</li>
+                        <li>Entry restrictions and capacity limits</li>
+                        <li>Insufficient signage and wayfinding</li>
+                    </ul>
+                    
+                    <div class="recommendation-box">
+                        <h4>Recommended Action:</h4>
+                        <p>Improve venue information with GPS coordinates and parking details. Enhance meeting room setups for better accessibility.</p>
+                    </div>
+                    
+                    <div class="programs-list">
+                        <span class="program-tag">Chicago: 60</span>
+                        <span class="program-tag">Detroit: 43</span>
+                        <span class="program-tag">Indianapolis: 32</span>
+                        <span class="program-tag">Cleveland: 18</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cluster 9 -->
+            <div class="cluster-card">
+                <div class="cluster-header">
+                    <h3>Attendance Tracking Difficulties</h3>
+                    <div class="cluster-size">124 entries (3.2%)</div>
+                </div>
+                <div class="cluster-content">
+                    <p>Specific challenges in accurately recording attendance at meetings, particularly virtual ones.</p>
+                    
+                    <h4>Key Challenges:</h4>
+                    <ul class="challenge-list">
+                        <li>Difficulty counting virtual meeting attendees</li>
+                        <li>Unclear definitions of "officials" vs public</li>
+                        <li>Forms not adapted for virtual meetings</li>
+                        <li>No access to attendance lists</li>
+                    </ul>
+                    
+                    <div class="recommendation-box">
+                        <h4>Recommended Action:</h4>
+                        <p>Develop virtual meeting attendance protocols. Revise forms with clear definitions and virtual-specific sections.</p>
+                    </div>
+                    
+                    <div class="programs-list">
+                        <span class="program-tag">Chicago: 56</span>
+                        <span class="program-tag">Detroit: 18</span>
+                        <span class="program-tag">Minneapolis: 18</span>
+                        <span class="program-tag">Philadelphia: 11</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Key Insights -->
+    <div class="container section">
+        <div class="section-header">
+            <h2>Strategic Insights & Next Steps</h2>
+        </div>
+        
+        <div class="insights-grid">
+            <div class="insight-card">
+                <div class="insight-icon">💡</div>
+                <h3>Universal Solutions</h3>
+                <p>Many challenges appear across multiple clusters, suggesting system-wide improvements would have broad impact. Focus on technology upgrades, standardized protocols, and improved communication.</p>
+            </div>
+            
+            <div class="insight-card">
+                <div class="insight-icon">🎯</div>
+                <h3>Targeted Interventions</h3>
+                <p>Each cluster requires specific solutions. Prioritize based on cluster size and severity of impact. Start with the largest clusters affecting the most documenters.</p>
+            </div>
+            
+            <div class="insight-card">
+                <div class="insight-icon">📊</div>
+                <h3>Program Patterns</h3>
+                <p>Chicago and Detroit appear most frequently across clusters, suggesting these programs may benefit from additional support and resources.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Call to Action -->
+    <div class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Documenter Experiences?</h2>
+            <p style="font-size: 1.25rem; margin: 1rem 0;">Use these insights to create targeted improvements that address real documenter challenges.</p>
+            <a href="visualization_output_refined/refined_cluster_analysis.md" class="cta-button">View Full Analysis</a>
+            <a href="#" class="cta-button">Download Action Plan Template</a>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Documenters Feedback Cluster Analysis | Powered by AI & Data Science</p>
+            <p style="opacity: 0.8; font-size: 0.9rem; margin-top: 0.5rem;">Analysis Date: July 2025</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add hover effects to cluster cards
+        const clusterCards = document.querySelectorAll('.cluster-card');
+        clusterCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.cursor = 'pointer';
+            });
+        });
+    </script>
+</body>
+</html>
