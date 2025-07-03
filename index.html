@@ -710,39 +710,199 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            /* General mobile adjustments */
+            .container {
+                padding: 0 15px;
+            }
+
+            /* Hero section */
+            .hero-section {
+                padding: 30px 0;
+            }
+
             .hero-section h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
+                line-height: 1.2;
+                margin-bottom: 15px;
             }
-            
-            .breakdown-tables {
-                grid-template-columns: 1fr;
-                gap: 30px;
+
+            .hero-section p {
+                font-size: 1.1rem;
+                margin-bottom: 20px;
             }
-            
+
+            .highlight-yellow {
+                padding: 2px 8px;
+                font-size: 0.95em;
+            }
+
+            /* Section titles */
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+
+            /* Stats section */
+            .stats-section {
+                padding: 40px 0;
+            }
+
             .stats-hero {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 20px;
             }
 
-            .secondary-stats {
-                order: -1;
-                flex-direction: row;
+            /* Timeline chart container */
+            .timeline-chart {
+                padding: 20px !important;
+            }
+
+            .chart-title-main {
+                font-size: 1.2rem;
+                gap: 8px;
+            }
+
+            .chart-title-main i {
+                font-size: 1.4rem;
+            }
+
+            .total-count {
+                font-size: 0.85rem;
+            }
+
+            .timeline-container {
+                min-height: 200px;
+                padding: 10px;
+            }
+
+            /* Cities chart */
+            .cities-chart {
+                padding: 20px !important;
+                margin-top: 20px;
+            }
+
+            .chart-title {
+                font-size: 1.2rem;
+            }
+
+            .chart-container {
+                min-height: 200px;
+                padding: 10px;
+            }
+
+            /* Canvas responsive sizing */
+            canvas {
+                max-height: 300px !important;
+            }
+
+            /* Tables section */
+            .breakdown-section {
+                padding: 40px 0;
+            }
+
+            .breakdown-tables {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .breakdown-table {
                 overflow-x: auto;
-                gap: 15px;
-                padding-bottom: 10px;
             }
 
-            .stat-card {
-                min-width: 200px;
-                flex-shrink: 0;
+            .breakdown-table h3 {
+                font-size: 1.2rem;
+                padding: 15px;
             }
 
-            .primary-stat .mega-number {
-                font-size: 3.5rem;
+            .breakdown-table table {
+                min-width: 100%;
+                font-size: 0.9rem;
+            }
+
+            .breakdown-table th,
+            .breakdown-table td {
+                padding: 10px 15px;
+            }
+
+            /* Visualization section */
+            .visualization-section {
+                padding: 40px 0;
+            }
+
+            .viz-header {
+                font-size: 1.2rem;
+                padding: 15px 20px;
+            }
+
+            .viz-iframe {
+                height: 400px;
+            }
+
+            .viz-note {
+                padding: 15px 20px;
+                font-size: 0.8rem;
+            }
+
+            /* Clusters section */
+            .clusters-section {
+                padding: 40px 0;
+            }
+
+            .cluster-card {
+                margin-bottom: 25px;
+            }
+
+            .cluster-header {
+                font-size: 1.1rem;
+                padding: 20px;
+                flex-wrap: wrap;
+            }
+
+            .cluster-header i {
+                font-size: 1.4rem;
+            }
+
+            .cluster-content {
+                padding: 20px;
+            }
+
+            .cluster-description {
+                font-size: 1rem;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+
+            .insight-box {
+                padding: 15px;
+                font-size: 0.95rem;
+            }
+
+            .examples-title {
+                font-size: 1rem;
+                margin-bottom: 15px;
+            }
+
+            .example-feedback {
+                padding: 15px;
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            /* Methodology section */
+            .methodology-section {
+                padding: 40px 0;
+            }
+
+            .methodology-pipeline {
+                margin-top: 40px;
             }
 
             .pipeline-line {
                 display: none;
+            }
+
+            .pipeline-step {
+                margin-bottom: 20px;
             }
 
             .pipeline-step::before,
@@ -750,8 +910,115 @@
                 display: none;
             }
 
+            .step-header {
+                font-size: 1rem;
+                padding: 20px;
+            }
+
+            .step-content {
+                padding: 20px;
+                font-size: 0.95rem;
+            }
+
             .step-arrow {
                 display: none;
+            }
+
+            /* Stat cards */
+            .stat-card {
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .stat-icon {
+                font-size: 2rem;
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
+            }
+
+            .stat-label {
+                font-size: 0.8rem;
+            }
+
+            /* Show more button */
+            .show-more-btn {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 480px) {
+            .hero-section h1 {
+                font-size: 1.75rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            /* Stack legend items vertically on very small screens */
+            .chart-container canvas {
+                max-height: 250px !important;
+            }
+
+            /* Make tables scrollable with visual indicator */
+            .breakdown-table {
+                position: relative;
+            }
+
+            .breakdown-table::after {
+                content: '→';
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 1.5rem;
+                color: var(--accent-color);
+                opacity: 0.5;
+                pointer-events: none;
+            }
+
+            .breakdown-table table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+
+        /* Landscape orientation adjustments */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .hero-section {
+                padding: 20px 0;
+            }
+
+            .stats-section,
+            .breakdown-section,
+            .visualization-section,
+            .clusters-section,
+            .methodology-section {
+                padding: 30px 0;
+            }
+
+            canvas {
+                max-height: 200px !important;
+            }
+        }
+
+        /* Touch-friendly adjustments */
+        @media (hover: none) and (pointer: coarse) {
+            .cluster-card:hover,
+            .pipeline-step:hover,
+            .stat-card:hover {
+                transform: none;
+                box-shadow: var(--box-shadow);
+            }
+
+            .show-more-btn {
+                padding: 15px;
+                font-size: 1rem;
             }
         }
     </style>
@@ -1199,7 +1466,8 @@
                             ticks: {
                                 font: {
                                     family: 'Cooper Hewitt, sans-serif',
-                                    weight: '600'
+                                    weight: '600',
+                                    size: window.innerWidth < 768 ? 10 : 12
                                 },
                                 color: '#666666'
                             },
@@ -1211,9 +1479,12 @@
                             ticks: {
                                 font: {
                                     family: 'Cooper Hewitt, sans-serif',
-                                    weight: '600'
+                                    weight: '600',
+                                    size: window.innerWidth < 768 ? 9 : 12
                                 },
-                                color: '#666666'
+                                color: '#666666',
+                                maxRotation: window.innerWidth < 768 ? 45 : 0,
+                                minRotation: window.innerWidth < 768 ? 45 : 0
                             },
                             grid: {
                                 display: false
@@ -1255,16 +1526,17 @@
                     plugins: {
                         legend: {
                             display: true,
-                            position: 'bottom',
+                            position: window.innerWidth < 768 ? 'top' : 'bottom',
                             labels: {
                                 font: {
                                     family: 'Cooper Hewitt, sans-serif',
-                                    size: 10,
+                                    size: window.innerWidth < 768 ? 9 : 10,
                                     weight: '600'
                                 },
                                 color: '#333333',
-                                padding: 8,
-                                usePointStyle: true
+                                padding: window.innerWidth < 768 ? 6 : 8,
+                                usePointStyle: true,
+                                boxWidth: window.innerWidth < 768 ? 12 : 20
                             }
                         },
                         tooltip: {
@@ -1298,9 +1570,10 @@
                                 font: {
                                     family: 'Cooper Hewitt, sans-serif',
                                     weight: '600',
-                                    size: 11
+                                    size: window.innerWidth < 768 ? 10 : 11
                                 },
-                                color: '#333333'
+                                color: '#333333',
+                                padding: window.innerWidth < 768 ? 4 : 8
                             },
                             grid: {
                                 display: false
