@@ -1,0 +1,34 @@
+
+=== DOCUMENTERS FEEDBACK ANALYSIS UPDATE REPORT ===
+Generated: 2025-07-05 02:45:57
+
+SUMMARY STATISTICS:
+- Total feedback entries analyzed (SQLite): 4,926
+- Total filled feedback all-time (CSV): 5,644
+- Total filled feedback 12-months (CSV): 1,355
+
+MISSING PROGRAMS (not in current data):
+Atlantic County, Cape May County, Gary, Nebraska Panhandle
+
+PROGRAMS IN DATABASE:
+Total programs with data: 24
+Akron, Atlanta, Bismarck, Centre County, Chicago, Cincinnati, Cleveland, Columbia Gorge, Dallas, Detroit, Fort Worth, Fresno, Grand Rapids, Indianapolis, Los Angeles, Minneapolis, New Brunswick, Newark, Omaha, Philadelphia, San Diego, Spokane, Tulsa, Wichita
+
+ALL-TIME TOP 10 PROGRAMS BY FILLED FEEDBACK:
+1. Chicago: 2,032 entries
+2. Detroit: 1,190 entries
+3. Cleveland: 809 entries
+4. Indianapolis: 248 entries
+5. Minneapolis: 233 entries
+6. Akron: 194 entries
+7. Philadelphia: 188 entries
+8. Atlanta: 149 entries
+9. Omaha: 115 entries
+10. Wichita: 105 entries
+
+
+HTML UPDATES NEEDED:
+1. Update total count: 4,926 (currently shows 4,926)
+2. All-time table will show 24 programs
+3. 12-month table will show 22 programs
+4. Cities chart will show top 10 programs

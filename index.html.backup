@@ -10,7 +10,6 @@
     <style>
         :root {
             --primary-color: #FFE94E;
-            --primary-color-transparent: rgba(255, 233, 78, 0.1);
             --secondary-color: #1A1A1A;
             --accent-color: #2A9D8F;
             --link-color: #3399FF;
@@ -80,167 +79,6 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-        }
-
-        .highlight-text {
-            background: var(--primary-color);
-            color: var(--secondary-color);
-            padding: 2px 8px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* Introduction Section */
-        .intro-section {
-            padding: 60px 0;
-            background: var(--light-gray);
-        }
-
-        .intro-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
-        }
-
-        .intro-title {
-            font-family: var(--heading-font);
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: -0.01em;
-        }
-
-        .intro-description {
-            font-size: 1.2rem;
-            line-height: 1.7;
-            color: var(--dark-gray);
-            margin-bottom: 25px;
-        }
-
-        .intro-description strong {
-            color: var(--secondary-color);
-            font-weight: 700;
-        }
-
-        .intro-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .intro-stat {
-            text-align: center;
-            padding: 20px;
-            background: white;
-            border: 3px solid var(--secondary-color);
-            box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-        }
-
-        .intro-stat:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.2);
-        }
-
-        .intro-stat .stat-number {
-            font-family: var(--heading-font);
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .intro-stat .stat-label {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--medium-gray);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* Feedback Field Mockup */
-        .feedback-field-container {
-            background: white;
-            border: 4px solid var(--secondary-color);
-            box-shadow: var(--box-shadow);
-            padding: 0;
-        }
-
-        .feedback-field-header {
-            background: var(--secondary-color);
-            color: white;
-            padding: 20px;
-        }
-
-        .feedback-field-header h3 {
-            font-family: var(--heading-font);
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .feedback-field-header p {
-            font-size: 1rem;
-            margin: 0;
-            opacity: 0.9;
-        }
-
-        .feedback-field-screenshot {
-            padding: 25px;
-        }
-
-        .checklist-images {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin-bottom: 20px;
-        }
-
-        .checklist-full h4,
-        .checklist-zoom h4 {
-            font-family: var(--heading-font);
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            text-align: center;
-        }
-
-        .checklist-screenshot,
-        .feedback-screenshot {
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-            border: 3px solid var(--border-color);
-            border-radius: 4px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-        }
-
-        .checklist-screenshot:hover,
-        .feedback-screenshot:hover {
-            border-color: var(--accent-color);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .field-note {
-            font-size: 0.95rem;
-            color: var(--medium-gray);
-            font-style: italic;
-            line-height: 1.6;
-            padding: 15px;
-            background: var(--primary-color-transparent);
-            border-left: 4px solid var(--primary-color);
         }
 
         /* Brutalist Stats Grid */
@@ -915,93 +753,10 @@
                 font-size: 0.95em;
             }
 
-            .highlight-text {
-                padding: 1px 6px;
-                font-size: 0.95em;
-            }
-
             /* Section titles */
             .section-title {
                 font-size: 1.8rem;
                 margin-bottom: 30px;
-            }
-
-            /* Introduction section */
-            .intro-section {
-                padding: 40px 0;
-            }
-
-            .intro-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .intro-title {
-                font-size: 1.8rem;
-                margin-bottom: 20px;
-            }
-
-            .intro-description {
-                font-size: 1.1rem;
-                line-height: 1.6;
-                margin-bottom: 20px;
-            }
-
-            .intro-stats {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 15px;
-                margin-top: 30px;
-            }
-
-            .intro-stat {
-                padding: 15px;
-            }
-
-            .intro-stat .stat-number {
-                font-size: 1.5rem;
-            }
-
-            .intro-stat .stat-label {
-                font-size: 0.8rem;
-            }
-
-            .feedback-field-header {
-                padding: 15px;
-            }
-
-            .feedback-field-header h3 {
-                font-size: 1.2rem;
-                margin-bottom: 8px;
-            }
-
-            .feedback-field-header p {
-                font-size: 0.9rem;
-            }
-
-            .feedback-field-screenshot {
-                padding: 20px;
-            }
-
-            .checklist-images {
-                grid-template-columns: 1fr 1fr;
-                gap: 15px;
-                margin-bottom: 15px;
-            }
-
-            .checklist-full h4,
-            .checklist-zoom h4 {
-                font-size: 0.9rem;
-                margin-bottom: 8px;
-            }
-
-            .checklist-screenshot,
-            .feedback-screenshot {
-                border-width: 2px;
-            }
-
-            .field-note {
-                font-size: 0.85rem;
-                padding: 12px;
             }
 
             /* Stats section */
@@ -1236,19 +991,6 @@
                 font-size: 1.5rem;
             }
 
-            .intro-title {
-                font-size: 1.5rem;
-            }
-
-            .intro-stats {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-
-            .intro-stat {
-                padding: 12px;
-            }
-
             /* Stack legend items vertically on very small screens */
             .chart-container canvas {
                 max-height: 250px !important;
@@ -1292,10 +1034,6 @@
                 padding: 30px 0;
             }
 
-            .intro-section {
-                padding: 30px 0;
-            }
-
             canvas {
                 max-height: 200px !important;
             }
@@ -1321,49 +1059,8 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
-            <h1>Documenters Checklist Feedback Analysis</h1>
-            <p>Cluster analysis of <span class="highlight-yellow">4,926 feedback notes</span> from Documenters' checklist submissions</p>
-        </div>
-    </section>
-
-    <!-- Introduction Section -->
-    <section class="intro-section">
-        <div class="container">
-            <div class="intro-content">
-                <div class="intro-text">
-                    <h2 class="intro-title">About This Analysis</h2>
-                    <p class="intro-description">
-                        During our brainstorming session with the Docs HQ team we explored ideas for expanding the Contextualizer concept for Documenters. One idea that emerged was adding a field to the checklist for Documenters to "leave a note" for the next Documenter that will cover a meeting from that agency. Before lean testing this concept by adding or editing a question to the checklist, we wanted to analyze the data currently coming in from the checklist question "Any feedback for us that will help us better support Documenters on a future assignment like this?". Specifically, we wanted to understand how often this optional checklist field is being used, along with analyzing the content that Documenters are currently sharing in this field.
-                        
-                    </p>
-                                         <p class="intro-description">
-                         This analysis uses AI to identify patterns and themes across 4, 926 feedback entries, revealing insights about democratic participation, meeting accessibility, and civic engagement challenges across American cities.
-                     </p>
-                </div>
-                <div class="intro-visual">
-                    <div class="feedback-field-container">
-                        <div class="feedback-field-header">
-                            <h3>The Feedback Checklist Field</h3>
-                            <p>This feedback field is included at the end of the checklists that Documenters complete during or after their assignment.</p>
-                        </div>
-                        <div class="feedback-field-screenshot">
-                            <div class="checklist-images">
-                                <div class="checklist-full">
-                                    <h4>Full Checklist Context</h4>
-                                    <img src="docs-checklist.png" alt="Screenshot of the complete Documenters checklist showing all fields including meeting details, attendance, documentation methods, with the feedback field highlighted in a square at the bottom" class="checklist-screenshot">
-                                </div>
-                                <div class="checklist-zoom">
-                                    <h4>Feedback Field Detail</h4>
-                                    <img src="docs-feedback-field.png" alt="Close-up screenshot of the Documenters feedback field showing the question 'Any feedback for us that will help us better support Documenters on a future assignment like this?' with a text area and placeholder text" class="feedback-screenshot">
-                                </div>
-                            </div>
-                            <div class="field-note">
-                                <em>As a part of the Contextualizer AI discovery process we are considering updating this question to test the "leave a note for the next Documenter to cover this meeting" concept.</em>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h1>Documenters Feedback Analysis</h1>
+            <p>Cluster analysis of <span class="highlight-yellow">4,926 feedback notes</span> from Documenters</p>
         </div>
     </section>
 
@@ -1406,7 +1103,7 @@
         <div class="container">
             <div class="breakdown-tables">
                 <div class="breakdown-table">
-                    <h3>All-Time Feedback (5,644 entries)</h3>
+                    <h3>All-Time Feedback (4,926 entries)</h3>
                     <table>
                         <thead>
                             <tr>
@@ -1416,132 +1113,22 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Chicago</td>
-                                <td>2,032</td>
-                                <td>36.0%</td>
-                            </tr>
-                            <tr>
-                                <td>Detroit</td>
-                                <td>1,190</td>
-                                <td>21.1%</td>
-                            </tr>
-                            <tr>
-                                <td>Cleveland</td>
-                                <td>809</td>
-                                <td>14.3%</td>
-                            </tr>
-                            <tr>
-                                <td>Indianapolis</td>
-                                <td>248</td>
-                                <td>4.4%</td>
-                            </tr>
-                            <tr>
-                                <td>Minneapolis</td>
-                                <td>233</td>
-                                <td>4.1%</td>
-                            </tr>
-                            <tr>
-                                <td>Akron</td>
-                                <td>194</td>
-                                <td>3.4%</td>
-                            </tr>
-                            <tr>
-                                <td>Philadelphia</td>
-                                <td>188</td>
-                                <td>3.3%</td>
-                            </tr>
-                            <tr>
-                                <td>Atlanta</td>
-                                <td>149</td>
-                                <td>2.6%</td>
-                            </tr>
-                            <tr>
-                                <td>Omaha</td>
-                                <td>115</td>
-                                <td>2.0%</td>
-                            </tr>
-                            <tr>
-                                <td>Wichita</td>
-                                <td>105</td>
-                                <td>1.9%</td>
-                            </tr>
-                            <tr>
-                                <td>San Diego</td>
-                                <td>92</td>
-                                <td>1.6%</td>
-                            </tr>
-                            <tr>
-                                <td>Dallas</td>
-                                <td>81</td>
-                                <td>1.4%</td>
-                            </tr>
-                            <tr>
-                                <td>Grand Rapids</td>
-                                <td>46</td>
-                                <td>0.8%</td>
-                            </tr>
-                            <tr>
-                                <td>Fresno</td>
-                                <td>34</td>
-                                <td>0.6%</td>
-                            </tr>
-                            <tr>
-                                <td>Bismarck</td>
-                                <td>21</td>
-                                <td>0.4%</td>
-                            </tr>
-                            <tr>
-                                <td>Los Angeles</td>
-                                <td>19</td>
-                                <td>0.3%</td>
-                            </tr>
-                            <tr>
-                                <td>Cincinnati</td>
-                                <td>17</td>
-                                <td>0.3%</td>
-                            </tr>
-                            <tr>
-                                <td>Columbia Gorge</td>
-                                <td>15</td>
-                                <td>0.3%</td>
-                            </tr>
-                            <tr>
-                                <td>Spokane</td>
-                                <td>15</td>
-                                <td>0.3%</td>
-                            </tr>
-                            <tr>
-                                <td>Newark</td>
-                                <td>13</td>
-                                <td>0.2%</td>
-                            </tr>
-                            <tr>
-                                <td>New Brunswick</td>
-                                <td>13</td>
-                                <td>0.2%</td>
-                            </tr>
-                            <tr>
-                                <td>Fort Worth</td>
-                                <td>12</td>
-                                <td>0.2%</td>
-                            </tr>
-                            <tr>
-                                <td>Tulsa</td>
-                                <td>2</td>
-                                <td>0.0%</td>
-                            </tr>
-                            <tr>
-                                <td>Centre County</td>
-                                <td>1</td>
-                                <td>0.0%</td>
-                            </tr>
+                            <tr><td>Chicago</td><td>1,884</td><td class="percentage">38.3%</td></tr>
+                            <tr><td>Detroit</td><td>1,141</td><td class="percentage">23.2%</td></tr>
+                            <tr><td>Cleveland</td><td>759</td><td class="percentage">15.4%</td></tr>
+                            <tr><td>Indianapolis</td><td>231</td><td class="percentage">4.7%</td></tr>
+                            <tr><td>Minneapolis</td><td>231</td><td class="percentage">4.7%</td></tr>
+                            <tr><td>Akron</td><td>190</td><td class="percentage">3.9%</td></tr>
+                            <tr><td>Philadelphia</td><td>181</td><td class="percentage">3.7%</td></tr>
+                            <tr><td>Atlanta</td><td>145</td><td class="percentage">2.9%</td></tr>
+                            <tr><td>Omaha</td><td>115</td><td class="percentage">2.3%</td></tr>
+                            <tr><td>Wichita</td><td>97</td><td class="percentage">2.0%</td></tr>
                         </tbody>
                     </table>
                 </div>
 
                 <div class="breakdown-table">
-                    <h3>Last 12 Months (1,355 entries)</h3>
+                    <h3>Last 12 Months (1,180 entries)</h3>
                     <table>
                         <thead>
                             <tr>
@@ -1551,116 +1138,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Detroit</td>
-                                <td>287</td>
-                                <td>21.2%</td>
-                            </tr>
-                            <tr>
-                                <td>Indianapolis</td>
-                                <td>166</td>
-                                <td>12.3%</td>
-                            </tr>
-                            <tr>
-                                <td>Chicago</td>
-                                <td>141</td>
-                                <td>10.4%</td>
-                            </tr>
-                            <tr>
-                                <td>Akron</td>
-                                <td>129</td>
-                                <td>9.5%</td>
-                            </tr>
-                            <tr>
-                                <td>Cleveland</td>
-                                <td>96</td>
-                                <td>7.1%</td>
-                            </tr>
-                            <tr>
-                                <td>Wichita</td>
-                                <td>92</td>
-                                <td>6.8%</td>
-                            </tr>
-                            <tr>
-                                <td>San Diego</td>
-                                <td>76</td>
-                                <td>5.6%</td>
-                            </tr>
-                            <tr>
-                                <td>Philadelphia</td>
-                                <td>69</td>
-                                <td>5.1%</td>
-                            </tr>
-                            <tr>
-                                <td>Omaha</td>
-                                <td>50</td>
-                                <td>3.7%</td>
-                            </tr>
-                            <tr>
-                                <td>Atlanta</td>
-                                <td>41</td>
-                                <td>3.0%</td>
-                            </tr>
-                            <tr>
-                                <td>Minneapolis</td>
-                                <td>39</td>
-                                <td>2.9%</td>
-                            </tr>
-                            <tr>
-                                <td>Grand Rapids</td>
-                                <td>29</td>
-                                <td>2.1%</td>
-                            </tr>
-                            <tr>
-                                <td>Dallas</td>
-                                <td>28</td>
-                                <td>2.1%</td>
-                            </tr>
-                            <tr>
-                                <td>Bismarck</td>
-                                <td>20</td>
-                                <td>1.5%</td>
-                            </tr>
-                            <tr>
-                                <td>Los Angeles</td>
-                                <td>19</td>
-                                <td>1.4%</td>
-                            </tr>
-                            <tr>
-                                <td>Cincinnati</td>
-                                <td>17</td>
-                                <td>1.3%</td>
-                            </tr>
-                            <tr>
-                                <td>Columbia Gorge</td>
-                                <td>15</td>
-                                <td>1.1%</td>
-                            </tr>
-                            <tr>
-                                <td>Newark</td>
-                                <td>13</td>
-                                <td>1.0%</td>
-                            </tr>
-                            <tr>
-                                <td>New Brunswick</td>
-                                <td>13</td>
-                                <td>1.0%</td>
-                            </tr>
-                            <tr>
-                                <td>Fort Worth</td>
-                                <td>12</td>
-                                <td>0.9%</td>
-                            </tr>
-                            <tr>
-                                <td>Tulsa</td>
-                                <td>2</td>
-                                <td>0.1%</td>
-                            </tr>
-                            <tr>
-                                <td>Centre County</td>
-                                <td>1</td>
-                                <td>0.1%</td>
-                            </tr>
+                            <tr><td>Detroit</td><td>253</td><td class="percentage">21.4%</td></tr>
+                            <tr><td>Indianapolis</td><td>143</td><td class="percentage">12.1%</td></tr>
+                            <tr><td>Chicago</td><td>124</td><td class="percentage">10.5%</td></tr>
+                            <tr><td>Akron</td><td>116</td><td class="percentage">9.8%</td></tr>
+                            <tr><td>Wichita</td><td>81</td><td class="percentage">6.9%</td></tr>
+                            <tr><td>Cleveland</td><td>77</td><td class="percentage">6.5%</td></tr>
+                            <tr><td>Philadelphia</td><td>64</td><td class="percentage">5.4%</td></tr>
+                            <tr><td>San Diego</td><td>63</td><td class="percentage">5.3%</td></tr>
+                            <tr><td>Omaha</td><td>45</td><td class="percentage">3.8%</td></tr>
+                            <tr><td>Atlanta</td><td>35</td><td class="percentage">3.0%</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -2072,16 +1559,16 @@
             const ctx = document.getElementById('citiesChart').getContext('2d');
             
             const citiesData = {
-                labels: ["Chicago", "Detroit", "Cleveland", "Indianapolis", "Minneapolis", "Akron", "Philadelphia", "Atlanta", "Omaha", "Wichita"],
+                labels: ['Chicago', 'Detroit', 'Cleveland', 'Indianapolis', 'Minneapolis', 'Akron', 'Philadelphia', 'Atlanta'],
                 datasets: [{
                     label: 'Feedback Entries Analyzed',
-                    data: [1779, 1057, 667, 214, 205, 174, 167, 135, 106, 92], // Actual feedback counts from CSV
+                    data: [1884, 1141, 759, 231, 231, 190, 181, 145], // Actual feedback counts from CSV
                     backgroundColor: '#2A9D8F',
                     borderColor: '#1A1A1A',
                     borderWidth: 2
                 }, {
                     label: 'Roles Without Feedback',
-                    data: [2863, 1803, 1634, 354, 961, 410, 308, 673, 252, 178], // Adjusted to maintain realistic totals
+                    data: [3200, 1948, 1676, 411, 282, 764, 346, 886], // Adjusted to maintain realistic totals
                     backgroundColor: '#FFE94E',
                     borderColor: '#1A1A1A',
                     borderWidth: 2

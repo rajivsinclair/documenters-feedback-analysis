@@ -1,0 +1,25 @@
+program_name,total_submissions_all_time_pg,filled_documenters_feedback_all_time_pg,blank_documenters_feedback_all_time_pg,total_submissions_12mo_pg,filled_documenters_feedback_12mo_pg,blank_documenters_feedback_12mo_pg,filled_percentage_all_time_pg,filled_percentage_12mo_pg,organization,state,total_submissions_all_time_csv,filled_documenters_feedback_all_time_csv,blank_documenters_feedback_all_time_csv,filled_percentage_all_time_csv,total_submissions_12mo_csv,filled_documenters_feedback_12mo_csv,blank_documenters_feedback_12mo_csv,filled_percentage_12mo_csv
+Chicago,4897,2033,2864,452,141,311,41.52,31.19,City Bureau,Illinois,4895,2032,2863,41.51,454,141,313,31.06
+Detroit,2993,1190,1803,810,286,524,39.76,35.31,Outlier Media,Michigan,2993,1190,1803,39.76,811,287,524,35.39
+Cleveland,2443,809,1634,312,96,216,33.12,30.77,Signal Cleveland,Ohio,2443,809,1634,33.12,313,96,217,30.67
+Minneapolis,1194,233,961,215,39,176,19.51,18.14,Pillsbury United Communities,Minnesota,1194,233,961,19.51,215,39,176,18.14
+Atlanta,822,149,673,335,41,294,18.13,12.24,Canopy Atlanta,Georgia,822,149,673,18.13,338,41,297,12.13
+Akron,604,194,410,405,128,277,32.12,31.6,Signal Akron,Ohio,604,194,410,32.12,407,129,278,31.7
+Indianapolis,602,248,354,418,166,252,41.2,39.71,Mirror Indy,Indiana,602,248,354,41.2,418,166,252,39.71
+Fresno,521,34,487,0,0,0,6.53,0.0,[On Pause],California,521,34,487,6.53,0,0,0,0.0
+Philadelphia,496,188,308,245,67,178,37.9,27.35,Resolve Philly,Pennsylvania,496,188,308,37.9,247,69,178,27.94
+Omaha,367,115,252,124,50,74,31.34,40.32,Nebraska Journalism Trust and Civic Nebraska,Nebraska,367,115,252,31.34,125,50,75,40.0
+San Diego,330,93,237,262,77,185,28.18,29.39,inewsource,California,328,92,236,28.05,260,76,184,29.23
+Wichita,283,105,178,247,91,156,37.1,36.84,The Wichita Journalism Collaborative,Kansas,283,105,178,37.1,249,92,157,36.95
+Dallas,269,81,188,132,28,104,30.11,21.21,Dallas Free Press,Texas,269,81,188,30.11,132,28,104,21.21
+Grand Rapids,264,46,218,172,29,143,17.42,16.86,Grand Rapids Community Media Center,Michigan,264,46,218,17.42,172,29,143,16.86
+Cincinnati,66,18,48,66,18,48,27.27,27.27,Signal Cincinnati,Ohio,65,17,48,26.15,65,17,48,26.15
+Bismarck,52,21,31,51,20,31,40.38,39.22,Buffalo's Fire,North Dakota,52,21,31,40.38,51,20,31,39.22
+Newark,42,13,29,42,13,29,30.95,30.95,The New Jersey Alliance for Immigrant Justice,New Jersey,42,13,29,30.95,42,13,29,30.95
+Fort Worth,38,12,26,38,12,26,31.58,31.58,Fort Worth Report,Texas,38,12,26,31.58,38,12,26,31.58
+Columbia Gorge,38,16,22,38,16,22,42.11,42.11,Uplift Local,Oregon,37,15,22,40.54,37,15,22,40.54
+Los Angeles,31,19,12,31,19,12,61.29,61.29,LA Local News Initiative,California,31,19,12,61.29,31,19,12,61.29
+Spokane,31,15,16,0,0,0,48.39,0.0,Range Media,Washington,31,15,16,48.39,0,0,0,0.0
+New Brunswick,28,13,15,27,13,14,46.43,48.15,coLAB Arts,New Jersey,28,13,15,46.43,27,13,14,48.15
+Centre County,7,1,6,7,1,6,14.29,14.29,News Lab @ Penn State,Pennsylvania,7,1,6,14.29,7,1,6,14.29
+Tulsa,5,2,3,5,2,3,40.0,40.0,Tulsa Local News Initiative,Oklahoma,4,2,2,50.0,4,2,2,50.0

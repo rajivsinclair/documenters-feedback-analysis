@@ -1,0 +1,45 @@
+{
+  "cities_chart": {
+    "labels": [
+      "Chicago",
+      "Detroit",
+      "Cleveland",
+      "Indianapolis",
+      "Minneapolis",
+      "Akron",
+      "Philadelphia",
+      "Atlanta",
+      "Omaha",
+      "Wichita"
+    ],
+    "feedback_analyzed": [
+      1779,
+      1057,
+      667,
+      214,
+      205,
+      174,
+      167,
+      135,
+      106,
+      92
+    ],
+    "roles_without_feedback": [
+      2863,
+      1803,
+      1634,
+      354,
+      961,
+      410,
+      308,
+      673,
+      252,
+      178
+    ]
+  },
+  "totals": {
+    "all_time_filled": 5644,
+    "12_month_filled": 1355,
+    "analyzed_sqlite": 4926
+  }
+}
