@@ -8,7 +8,14 @@
       "Bash(git add:*)",
       "Bash(git push:*)",
       "Bash(git pull:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git checkout:*)",
+      "mcp__puppeteer__puppeteer_navigate",
+      "Bash(grep:*)",
+      "mcp__puppeteer__puppeteer_screenshot",
+      "Bash(ls:*)",
+      "mcp__puppeteer__puppeteer_evaluate",
+      "Bash(rm:*)"
     ],
     "deny": []
   }
